@@ -647,17 +647,17 @@ body {
 }
 
 .society-map {
-  width: 70%;
+  width: 74%;
   height: 100%;
-  background: url("../img/home/3_03.png") no-repeat;
+  background: url("../img/home/3_03_1.jpg") no-repeat;
   background-size: 100% 100%;
   left: 0;
 }
 
 .society-items {
-  width: 30%;
+  width: 26%;
   height: 100%;
-  background: url("../img/home/commnityNoticy.png") no-repeat;
+  background: url("../img/home/commnityNotic1.jpg") no-repeat;
   background-size: 100% 100%;
 }
 
@@ -699,7 +699,7 @@ body {
   .chat-group {
     width: 100%;
     height: 100%;
-    background: url(../img/neighbor/bg2.png) no-repeat;
+    background: url(../img/neighbor/content_bg1.jpg) no-repeat;
     background-size: 100% 100%;
     .chat-list {
       position: absolute;
@@ -712,7 +712,7 @@ body {
       -webkit-box-pack: center;
       -webkit-box-orient: vertical;
       .chat-list-item {
-        background: url(../img/neighbor/1_22.png) no-repeat;
+        /*background: url(../img/neighbor/1_22.png) no-repeat;*/
         width: 275px;
         height: 60px;
         background-size: 100% 100%;
@@ -729,7 +729,7 @@ body {
       -webkit-box-align: center;
       -webkit-box-pack: center;
       -webkit-box-orient: vertical;
-      background: url(../img/neighbor/content_bg.png) no-repeat;
+      /*background: url(../img/neighbor/content_bg.png) no-repeat;*/
       background-size: 100% 100%;
 
     }

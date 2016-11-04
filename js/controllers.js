@@ -15,7 +15,7 @@ angular.module('app.controllers', [])
     $scope.name = '管理员';
 
     $scope.nowModule = 1;
-
+    $scope.headShow = true;
     $scope.footerShow = true;
     $scope.moduleChange = function (module_id, room_id) {
       // if($scope.nowModule!=module_id){
@@ -69,6 +69,9 @@ angular.module('app.controllers', [])
     $scope.footerStatus = function (status) {
       $scope.footerShow = status;
     };
+    $scope.headStatus = function (status) {
+      $scope.headShow = status;
+    };
     $scope.icon_on = 0;
     $scope.iconChange = function (icon_id) {
       $scope.icon_on = icon_id;
@@ -118,6 +121,7 @@ angular.module('app.controllers', [])
     };
   })
   .controller('homeCtrl', function ($scope, $state) {
+    $scope.headShow = true;
     $scope.moduleChange(1);
 
     $scope.infoState = 1;
@@ -376,8 +380,9 @@ angular.module('app.controllers', [])
   .controller('societyCtrl', function ($scope, $state) {
     $scope.moduleChange(2, 0);
   }).controller('lifeCtrl', function ($scope, $state) {
-  $scope.moduleChange(3, 0);
+    $scope.moduleChange(3, 0);
 }).controller('neighborCtrl', function ($scope, $state) {
+  $scope.headStatus(false);
   $scope.moduleChange(4, 0);
 }).controller('roomCtrl', function ($scope, $state) {
 

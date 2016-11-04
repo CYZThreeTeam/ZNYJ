@@ -34,7 +34,14 @@
             padding: 22px 0 5px 20px;
             -webkit-align-items: flex-end;
         }
-
+        &.headHide{
+            .home-header{
+                display: none;
+            }
+            .home-content{
+                margin-top: 0;;
+            }
+        }
         .home-content{
             margin-top: 72px;
             width: 100%;
