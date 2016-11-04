@@ -24,7 +24,8 @@ body {
 }
 
 .home .main-footer.footerShow .home-footer {
-  -webkit-animation: fadeInAni1 1s ease forwards;
+  /*-webkit-animation: fadeInAni1 .5s ease forwards;*/
+  opacity: 1;
   ul {
     visibility: visible;
   }
@@ -1187,7 +1188,8 @@ body {
   }
 }
 .footernav{
-      width: 552px;
+    opacity: 0;visibility: hidden;transition: all .5s ease;-webkit-transition:all .5s ease;z-index: 100;
+    width: 552px;
     background: url(../img/home/Background.png);
     height: 63px;
     position: fixed;
@@ -1195,6 +1197,9 @@ body {
     margin-left:-276px;
     bottom: 61px;
     box-sizing: border-box;text-align: center;
+    &.footerShow{
+      opacity: 1;visibility: visible;
+    }
 }
 .footernav a {
     display: block;
@@ -1239,4 +1244,9 @@ body {
           background-position: -295px 0px;
       }
     }
+}
+
+._room1{
+  background-position: 191px 255px;
+  transform: scale(3.6);    transition: all .7s ease;
 }

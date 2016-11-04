@@ -74,7 +74,9 @@
             -webkit-justify-content: center;
             -webkit-align-items: center;
             position: relative;
-            -webkit-animation: fadeOutAni1 1s ease forwards;
+            /*-webkit-animation: fadeOutAni1 1s ease forwards;*/
+            transition: all .5s ease;-webkit-transition:all .5s ease;
+            opacity: 0;
         }
     }
 
