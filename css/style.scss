@@ -8,7 +8,13 @@ body {
 }
 
 .home-bg {
-  background: url("../img/home/roomBG.png") no-repeat center center;
+  background: url("../img/home/hdBG.png") no-repeat center center;
+  background-size: 85% 80%;
+  &.room{
+    li{
+      visibility: hidden;
+    }
+  }
 }
 /*房间公共类*/
 .mainContent {

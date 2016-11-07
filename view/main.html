@@ -5,7 +5,8 @@
       <li><a class="main-left-menu"></a></li>
       <li><a class="main-left-users"></a></li>
       <li><a class="main-left-call"></a></li>
-      <li><a class="main-left-exit"  ng-click="loginOut()"></a></li>
+      <!--<li><a class="main-left-exit"  ng-click="loginOut()"></a></li>-->
+      <li><a class="main-left-exit" ui-sref='login'></a></li>
     </ul>
   </div>
 
@@ -28,7 +29,7 @@
     </div>
 
     <!--内容栏-->
-    <ion-nav-view animation="slide-left-right-ios7" name="main" class="home-content"></ion-nav-view>
+    <ion-nav-view animation="no-animation" name="main" class="home-content"></ion-nav-view>
 
     <!--Home页面子路由-->
     <!--<ion-nav-view animation="slide-left-right-ios7" name="home" class="home-content"></ion-nav-view>-->

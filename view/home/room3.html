@@ -16,8 +16,11 @@
     <!--<li ></li>-->
     <!--<li ></li>-->
     <!--<li ></li>-->
-    <li ng-repeat="item in switchConfig" ng-class="{true:'open',false:''}[item.state]" ng-click="clickHandle(item)">
+    <!--<li ng-repeat="item in switchConfig" ng-class="{true:'open',false:''}[item.state]" ng-click="clickHandle(item)">
       <label  class="room-switch-title">{{item.name}}</label>
+    </li>-->
+    <li class="{{key}} {{val[3]}}" ng-repeat="(key,val) in nowDevice" ng-class="{true:'open',false:''}[val[2]=='00ff']" ng-click="changeStatus(key)">
+      <label  class="room-switch-title">{{val[0]}}</label>
     </li>
   </ul>
 
