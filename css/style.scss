@@ -1,4 +1,5 @@
 /* Empty. Add your own CSS if you like */
+@import 'animation.scss';
 @import 'common.scss';
 @import 'layout.scss';
 
@@ -9,7 +10,7 @@ body {
 .home-bg {
   background: url("../img/home/roomBG.png") no-repeat center center;
 }
-
+/*房间公共类*/
 .mainContent {
   background: url("../img/home/bg.png") no-repeat center center;
   .map {
@@ -19,222 +20,88 @@ body {
   }
 }
 
+
 .home-footer ul {
   visibility: hidden;
 }
-
-.home .main-footer.footerShow .home-footer {
-  /*-webkit-animation: fadeInAni1 .5s ease forwards;*/
-  opacity: 1;
-  ul {
-    visibility: visible;
-  }
-}
-
 .shade {
-  visibility: hidden;
-}
-
-@-webkit-keyframes fadeInAni1 {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeOutAni1 {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes fadeInAni {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-@-webkit-keyframes fadeOutAni {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@-webkit-keyframes circleFadeInAni {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-20px)
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-    visibility: visible;
-  }
-}
-
-@-webkit-keyframes circleFadeOutAni {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(-20px);
-    visibility: hidden;
-  }
-}
-
-.home-footer li {
-  width: 120px;
-  height: 120px;
-  display: inline-block;
-  margin: 0 30px;
-  color: #fff;
-  text-align: center;
-  line-height: 110px;
-  font-size: 26px;;
-}
-
-.home-footer .footer-circle {
-  position: absolute;
-}
-
-.home-footer .footer-circle li {
-  border: 5px solid #ccc;
-  border-radius: 50%;
-  position: relative;
-  transition: all 1s ease;
-}
-
-.home-footer.fadeOut {
-  transition: all 1.5s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.home-footer.fadeOut li {
-  transition: all 1s ease;
-  /*transform: translateY(-8px);*/
-  /*transition-duration*/
-}
-
-.home-footer.fadeOut li:nth-child(1) {
-  transition-duration: .8s;
-}
-
-.home-footer.fadeOut li:nth-child(2) {
-  transition-duration: .6s;
-}
-
-.home-footer.fadeOut li:nth-child(3) {
-  transition-duration: .4s;
-}
-
-.home-footer.fadeOut li:nth-child(4) {
-  transition-duration: .2s;
-}
-
-.home-footer li .l {
-  position: absolute;
-  left: -5px;
-  top: -5px;
-  width: 120px;
-  height: 120px;
-  border: 5px solid RGBA(67, 236, 200, 0.5);
-  border-radius: 50%;
-  clip: rect(0px, 60px, 120px, 0px);
-  -webkit-transform: rotate(-80deg);
-}
-
-.home-footer li .l:after {
-  content: ' ';
-  width: 104px;
-  height: 104px;
-  position: absolute;
-  left: 3px;
-  top: 3px;
-  border-radius: 50%;
-  border: 1px solid #fff;
-}
-
-.home-footer li .r {
-  position: absolute;
-  left: -5px;
-  top: -5px;
-  width: 120px;
-  height: 120px;
-  border: 5px solid RGBA(67, 236, 200, 1);
-  border-radius: 50%;
-  clip: rect(0px, 120px, 120px, 60px);
-}
-
-.home-footer li .r:after {
-  content: ' ';
-  width: 104px;
-  height: 104px;
-  position: absolute;
-  left: 3px;
-  top: 3px;
-  border-radius: 50%;
-  border: 1px solid #fff;
-}
-
-.home-footer .home-footer-active {
-  -webkit-animation: rotate 3s linear infinite forwards;
-}
-
-@-webkit-keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-.welcome-bg {
-  background: url("../img/home/wel_bg.png");
-  width: 100%;
-  height: 100%;
-  background-size: 100% 100%;
-  -webkit-filter: blur(5px);
-  display: -webkit-flex;
-  position: absolute;
-  /*left:0;*/
+  position: fixed;
   top: 0;
-  z-index: 5;
-  -webkit-animation: fadeInOut 5s ease forwards;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  visibility: hidden;
+}
+.home .main-footer.footerShow {
+  .home-footer {
+    /*-webkit-animation: fadeInAni1 .5s ease forwards;*/
+    opacity: 1;
+    ul {
+      visibility: visible;
+    }
+  }
+  .shade {
+    visibility: visible;
+  }
+}
+
+
+
+/*悬浮底部*/
+.home-footer{
+  &.fadeOut {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .home-footer-active {
+    -webkit-animation: rotate 3s linear infinite forwards;
+  }
+  ul.footer-circle {
+    position: absolute;
+    li {
+      border: 5px solid #ccc;
+      border-radius: 50%;
+      position: relative;
+    }
+  }
+  li {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    margin: 0 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 110px;
+    font-size: 26px;
+    .l,.r{
+      position: absolute;
+      left: -5px;
+      top: -5px;
+      width: 120px;
+      height: 120px;
+      border: 5px solid RGBA(67, 236, 200, 0.5);
+      border-radius: 50%;
+      &:after{
+        content: ' ';
+        width: 104px;
+        height: 104px;
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+      }
+    }
+    .l {
+      clip: rect(0px, 60px, 120px, 0px);
+      -webkit-transform: rotate(-80deg);
+    }
+    .r {
+      clip: rect(0px, 120px, 120px, 60px);
+    }
+  }
+  
 }
 
 .room-ul > li:nth-child(1) {
@@ -456,7 +323,19 @@ body {
   width: 30px;
   height: 30px;
 }
-
+.welcome-bg {
+  background: url("../img/home/wel_bg.png");
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  -webkit-filter: blur(5px);
+  display: -webkit-flex;
+  position: absolute;
+  /*left:0;*/
+  top: 0;
+  z-index: 5;
+  -webkit-animation: fadeInOut 5s ease forwards;
+}
 .welcome {
   position: fixed;
   top: 50%;
@@ -859,34 +738,21 @@ body {
   margin: 0 2px;
 }
 
-.shade {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 99;
-}
-
-.footerShow .shade {
-  visibility: visible;
-}
-
 /*窗帘*/
 .curtain {
   position: absolute;
-  background-position: -84px -265px;
+  background-position: -82px -265px;
   &.open {
-    background-position: -84px -203px;
+    background-position: -82px -203px;
   }
 }
 
 /*风扇 空调*/
 .fans {
   position: absolute;
-  background-position: 0 -265px;
+  background-position: 3px -265px;
   &.open {
-    background-position: 0 -203px;
+    background-position: 3px -203px;
   }
 }
 
@@ -894,9 +760,9 @@ body {
 .lamp {
   position: absolute;
 
-  background-position: -126px -265px;
+  background-position: -124px -265px;
   &.open {
-    background-position: -126px -203px;;
+    background-position: -124px -203px;;
   }
 }
 
@@ -930,6 +796,8 @@ body {
         position: absolute;
         text-align: center;
         top: -20px;
+        left: 50%;
+        transform: translate(-50%);-webkit-transform: translate(-50%);
       }
 
     }
@@ -937,9 +805,6 @@ body {
       @extend .curtain;
       top: 230px;
       left: 170px;
-    }
-    li:nth-child(1).open {
-      background-position: -84px -207px;
     }
     li:nth-child(2) {
       @extend .lamp;
