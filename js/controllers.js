@@ -1,6 +1,6 @@
 angular.module('app.controllers', [])
   .config(function($ionicConfigProvider) {
-    // $ionicConfigProvider.views.transition('none');
+    $ionicConfigProvider.views.transition('none');
   })
   .controller('loginCtrl', function ($scope, $state, $ionicViewSwitcher) {
     $scope.login = true;
@@ -25,6 +25,19 @@ angular.module('app.controllers', [])
     $scope.headStatus = function (status) {
       $scope.headShow = status;
     };
+    //回到首页
+    $scope.backHome = function(){
+      $scope.showChild = false;
+      $state.go('main.home', {reload: true});
+    }
+    //定位房间
+    $scope.position = function(status){
+      $scope.showChild = status;
+      setTimeout(function() {
+        $state.go('main.room'+status, {reload: true});
+      }, 500);
+    }
+    //路由切换
     $scope.moduleChange = function (module_id, room_id) {
       // if($scope.nowModule!=module_id){
       console.log(module_id + '--' + room_id);

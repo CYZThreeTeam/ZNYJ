@@ -1,5 +1,4 @@
 angular.module('app.services', [])
-
 .value('model302',{
   'room_id':'302',
   //['显示名称','设备ID','开关状态(0000=关闭,00ff=开启)','样式类'],同一房间中键名不要重复

@@ -6,7 +6,7 @@
       <li><a class="main-left-users"></a></li>
       <li><a class="main-left-call"></a></li>
       <!--<li><a class="main-left-exit"  ng-click="loginOut()"></a></li>-->
-      <li><a class="main-left-exit" ui-sref='login'></a></li>
+      <li><a class="main-left-exit" ui-sref='login' ui-sref-opts="{reload: true}"></a></li>
     </ul>
   </div>
 
@@ -16,20 +16,29 @@
     <!--头部信息栏-->
     <div class="home-header">
       <div class="top-logo"></div>
-      <div class="top-date">2016年10月1日</div>
-      <div class="top-icon">
-        <span ng-class="{true:'on',false:''}[icon_on==1]" ng-click="iconChange(1)"><i>2</i></span>
-        <span ng-class="{true:'on',false:''}[icon_on==2]" ng-click="iconChange(2)"></span>
-        <span ng-class="{true:'on',false:''}[icon_on==3]" ng-click="iconChange(3)"></span>
-        <span ng-class="{true:'on',false:''}[icon_on==4]" ng-click="iconChange(4)"></span>
-        <span ng-class="{true:'on',false:''}[icon_on==5]" ng-click="iconChange(5)"></span>
+      <div class="top-date">2016年10月1日
+        <div class="content">
+          <img src="/img/home/calendar.png" alt="">
+          <div class="activity">
+            <img src="/img/home/calendar1.png" alt="">
+            <div class="slide"><img class="l" src="/img/home/calendarL.png" alt=""> <img class="r" src="/img/home/calendarR.png"> </div>
+          </div>
+        </div>
       </div>
-      <div class="top-music"><img src="../img/home/music.png" alt=""></div>
+      <div class="top-icon">
+        <div  ng-click="iconChange(1)" class="message"><i>2</i><div class="content"><img src="/img/home/infoCard.png" alt=""><div class="more"><div class="ac"></div><img src="/img/home/infoDetails.png" alt=""></div></div></div>
+        <div  ng-click="iconChange(2)" class="video"><div class="content"><img src="/img/home/video.png" alt=""><div class="addressBook"><img src="/img/home/video1.png" alt=""></div></div></div>
+        <div  ng-click="iconChange(3)"><div class="content"></div></div>
+        <div  ng-click="iconChange(4)"><div class="content"></div></div>
+        <div  ng-click="iconChange(5)"><div class="content"></div></div>
+        <!--ng-class="{true:'on',false:''}[icon_on==5]"-->
+      </div>
+      <div class="top-music"><img src="../img/home/music.png" alt=""><div class="content"><img src="/img/home/musicClinet.png" alt=""><div class="musicList"><img src="/img/home/musicList.png" alt=""></div></div></div>
       <div class="top-weather"><img src="../img/home/weather.png" alt=""></div>
     </div>
 
     <!--内容栏-->
-    <ion-nav-view animation="no-animation" name="main" class="home-content"></ion-nav-view>
+    <ion-nav-view animation="slide-in-up" name="main" class="home-content"></ion-nav-view>
 
     <!--Home页面子路由-->
     <!--<ion-nav-view animation="slide-left-right-ios7" name="home" class="home-content"></ion-nav-view>-->
@@ -53,7 +62,7 @@
           <li>邻</li>
         </ul>
       </div>
-      <div class="footernav" ng-class="{true:'footerShow',false:''}[footerShow==false]">
+      <div class="footernav" ng-class="{true:'footerShow',false:''}[footerShow==false&&nowModule==1]">
         <a href=""></a>
         <a href=""></a>
         <a href=""></a>

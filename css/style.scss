@@ -10,6 +10,7 @@ body {
 .home-bg {
   background: url("../img/home/hdBG.png") no-repeat center center;
   background-size: 85% 80%;
+  transition: all 1s ease;-webkit-transition: all 1s ease;
   &.room{
     li{
       visibility: hidden;
@@ -19,6 +20,7 @@ body {
 /*房间公共类*/
 .mainContent {
   background: url("../img/home/bg.png") no-repeat center center;
+  /*-webkit-animation:blur 1s ease;*/
   .map {
     position: absolute;
     left: 25px;
@@ -28,7 +30,7 @@ body {
 
 
 .home-footer ul {
-  visibility: hidden;
+  visibility: hidden;white-space: nowrap;
 }
 .shade {
   position: fixed;
@@ -41,7 +43,9 @@ body {
 }
 .home .main-footer.footerShow {
   .home-footer {
-    /*-webkit-animation: fadeInAni1 .5s ease forwards;*/
+    width: 100%;
+    height: 100%;
+    background: RGBA(0, 0, 0, 0.5);border:none;transform: none;-webkit-transform: none;border-radius: 0;
     opacity: 1;
     ul {
       visibility: visible;
@@ -51,6 +55,7 @@ body {
     visibility: visible;
   }
 }
+
 
 
 
@@ -436,17 +441,131 @@ body {
   font-size: 17px;
   padding-top: 4px;
   box-sizing: border-box;
-  background: url(../img/home/spirit.png) -71px -99px;
-  padding-left: 50px;
-  color: #00d5c3;
+  background: url(../img/home/time.png) no-repeat 20px center;
+  padding-left: 50px;color:#fff;position: relative;background-size:24px 27px;
+  &:hover{
+    color: #00d5c3;background-image:url(/img/home/time1.png);
+    img{
+      -webkit-animation: fadeInAni 1.3s ease forwards;animation: fadeInAni 1.3s ease forwards;visibility:visible;
+      transform: translate(-50%,0px);-webkit-transform: translate(-50%,0px);
+    }
+  }
+  img{
+    width:255px;left: 50%;transform: translate(-50%,20px);-webkit-transform: translate(-50%,20px);top:62px;position: absolute;
+    visibility: hidden;opacity: 0;transition:all .5s ease;-webkit-transition:all .5s ease;
+  }
+  .content{
+    top:-50px;position: relative;width:255px;left:50%;transform:translateX(-50%);-webkit-transform:translateX(-50%);overflow:hidden;visibility: hidden;
+    img{
+      position: relative;z-index: 2;
+    }
+    .activity{
+      position: relative;z-index:1;
+      img{
+        top:13px;
+      }
+      .slide{
+        position: absolute;left:0;top:226px;white-space:nowrap;width: 255px;overflow: hidden;z-index: 3;
+        transform:translateX(-128px);-webkit-transform:translateX(-128px);transition:all .5s ease;-webkit-transition:all .5s ease;
+        &:hover{
+          transform:translateX(0);-webkit-transform:translateX(0);
+        }
+        img{
+          position: static;transform: none;-webkit-transform: none;vertical-align: middle;
+          &.r{
+            transform: translateX(-132px);-webkit-transform: translateX(-132px);
+          }
+        }
+      }
+    }
+  }
 }
-
+.message{
+  &:hover{
+    .content>img{
+      -webkit-transform: translateX(0);
+    }
+  }
+  .content{
+    transform: translateX(335px) !important;-webkit-transform: translateX(335px) !important;
+    .more {
+      &:hover{
+        img{
+           -webkit-transform: translateX(0);
+        }
+      }
+      .ac{
+        position: absolute;
+        height: 50px;
+        border-radius: 50%;
+        top: 12px;
+        width: 50px;
+        right: 10px;
+      }
+    }
+    img{
+      width:273px;-webkit-transform: translateX(120%);transition: all .5s ease;-webkit-transition: all .5s ease;
+    }
+    
+  }
+}
 .top-icon {
 
 }
-
+.video{
+  img{width:204px;position: relative;z-index: 3;pointer-events: none;}
+  .content {
+    .addressBook{
+      position: absolute;
+      right: 5px;
+      width: 45px;
+      height: 45px;
+      bottom: 44px;
+      &:hover{
+        img{
+          -webkit-animation: fadeInAni 1.3s ease forwards;animation: fadeInAni 1.3s ease forwards;visibility: visible;
+          transform: translateY(0px);-webkit-transform: translateY(0px);
+        }
+      }
+      img{
+        position: absolute;transform: translateY(20px);-webkit-transform: translateY(20px);
+        visibility: hidden;opacity: 0;transition:all .5s ease;-webkit-transition:all .5s ease;
+        left: -154px;
+        top: 46px;z-index: 2;
+      }
+    }
+  }
+}
 .top-music {
-
+  position: relative;
+  .content{
+      visibility: hidden;opacity: 0;transition:all .5s ease;-webkit-transition:all .5s ease;
+      position: absolute;left: 50%;transform: translate(-50%,20px);-webkit-transform: translate(-50%,20px);top:52px;
+      img{
+        width:297px;position: relative;z-index: 3;pointer-events: none;
+      }
+      .musicList{
+        position: relative;
+        top: -46px;
+        left: 2px;
+        &:hover{
+          img{
+            -webkit-animation: fadeInAni 1.3s ease forwards;animation: fadeInAni 1.3s ease forwards;visibility: visible;
+            transform: translateY(0px);-webkit-transform: translateY(0px);
+          }
+        }
+        img{
+          transform: translateY(20px);-webkit-transform: translateY(20px);
+          visibility: hidden;opacity: 0;transition:all .5s ease;-webkit-transition:all .5s ease;
+          left: -2px;
+          top: 0;z-index: 2;
+        }
+      }
+  }
+  &:hover .content{
+      -webkit-animation: fadeInAni 1.3s ease forwards;animation: fadeInAni 1.3s ease forwards;visibility:visible;
+      transform: translate(-50%,0px);-webkit-transform: translate(-50%,0px);
+  }
 }
 
 .top-weather {
@@ -460,7 +579,7 @@ body {
   padding-top: 5px;
 }
 
-.top-icon span {
+.top-icon>div {
   display: block;
   width: 40px;
   height: 25px;
@@ -468,9 +587,17 @@ body {
   float: left;
   margin-left: 8px;
   background-image: url(../img/home/spirit.png);
+  .content{
+      visibility: hidden;opacity: 0;transition:all .5s ease;-webkit-transition:all .5s ease;
+      position: absolute;left: 50%;transform: translate(-50%,20px);-webkit-transform: translate(-50%,20px);top:36px;
+  }
+  &:hover .content{
+      -webkit-animation: fadeInAni 1.3s ease forwards;animation: fadeInAni 1.3s ease forwards;visibility:visible;
+      transform: translate(-50%,0px);-webkit-transform: translate(-50%,0px);
+  }
 }
 
-.top-icon span i {
+.top-icon>div i {
   display: block;
   width: 18px;
   height: 18px;
@@ -485,43 +612,43 @@ body {
   right: -2px;
 }
 
-.top-icon span:nth-child(1) {
+.top-icon>div:nth-child(1) {
   background-position: 0 0px;
 }
 
-.top-icon span:nth-child(1).on {
+.top-icon>div:nth-child(1):hover {
   background-position: 0 -66px;
 }
 
-.top-icon span:nth-child(2) {
+.top-icon>div:nth-child(2) {
   background-position: -35px 0px;
 }
 
-.top-icon span:nth-child(2).on {
+.top-icon>div:nth-child(2):hover {
   background-position: -35px -67px;
 }
 
-.top-icon span:nth-child(3) {
+.top-icon>div:nth-child(3) {
   background-position: -0px -31px;
 }
 
-.top-icon span:nth-child(3).on {
+.top-icon>div:nth-child(3):hover {
   background-position: -0px -102px;
 }
 
-.top-icon span:nth-child(4) {
+.top-icon>div:nth-child(4) {
   background-position: -40px -30px;
 }
 
-.top-icon span:nth-child(4).on {
+.top-icon>div:nth-child(4):hover {
   background-position: -40px -102px;
 }
 
-.top-icon span:nth-child(5) {
+.top-icon>div:nth-child(5) {
   background-position: -80px -31px;
 }
 
-.top-icon span:nth-child(5).on {
+.top-icon>div:nth-child(5):hover {
   background-position: -80px -66px;
 }
 
@@ -533,11 +660,32 @@ body {
 }
 
 .society-map {
+  position: relative;
   width: 74%;
   height: 100%;
-  background: url("../img/home/3_03_1.jpg") no-repeat;
+  background: url("../img/home/community.png") no-repeat;
   background-size: 100% 100%;
   left: 0;
+  li{
+    position: absolute;color:#fff;text-align: center;background: url(/img/home/community1.png) no-repeat;
+    background-size:39px 43px;width:39px;height:43px;line-height: 34px;
+  }
+  li:nth-child(1){
+    top: 54%;
+    left: 25%;
+  }
+  li:nth-child(2){
+    top: 43%;
+    left: 52%;
+  }
+  li:nth-child(3){
+    top: 65%;
+    left: 51%;
+  }
+  li:nth-child(4){
+    top: 51%;
+    left: 74%;
+  }
 }
 
 .society-items {
@@ -780,17 +928,9 @@ body {
     background-position: -40px -203px;
   }
 }
-
-.room1-bg {
-  display: -webkit-flex;
-  width: 100%;
-  height: 100%;
-  ul {
-    background: url(../img/home/2.png) no-repeat center -60px;
-    height: 100%;
-    width: 100%;
-    li {
-      background: url("../img/home/spirit.png");
+.roomControl{
+  li {
+      background-image: url("../img/home/spirit.png");
       width: 46px;
       height: 47px;
       .room-switch-title {
@@ -807,30 +947,33 @@ body {
       }
 
     }
-    li:nth-child(1) {
-      @extend .curtain;
-      top: 230px;
-      left: 170px;
+}
+.room1-bg {
+  display: -webkit-flex;
+  width: 100%;
+  height: 100%;
+  ul {
+    background: url(../img/home/2-2.png) no-repeat center center;
+    background-size: 90% 100%;
+    height: 100%;
+    width: 100%;
+    li:nth-child(1){
+      top: 18%;left: 37%;
     }
-    li:nth-child(2) {
-      @extend .lamp;
-      top: 210px;
-      left: 320px;
+    li:nth-child(2){
+      top: 18%;left: 45%;
     }
-    li:nth-child(3) {
-      @extend .lamp;
-      top: 100px;
-      left: 445px;
+    li:nth-child(3){
+      top: 18%;left: 53%;
     }
-    li:nth-child(4) {
-      @extend .fans;
-      top: 235px;
-      left: 700px;
+    li:nth-child(4){
+      top: 30%;left: 15%;
     }
-    li:nth-child(5) {
-      @extend .appliances;
-      top: 510px;
-      left: 430px;
+    li:nth-child(5){
+      top: 45%;left: 15%;
+    }
+    li:nth-child(6){
+      top: 70%;left: 47%;
     }
   }
 }
@@ -840,10 +983,31 @@ body {
   width: 100%;
   height: 100%;
   ul {
-    background: url(../img/home/3.png) no-repeat center -70px;
+    background: url(../img/home/3-3.png) no-repeat center center;
+    background-size: 90% 100%;
     height: 100%;
     width: 100%;
-
+    li:nth-child(1){
+      top: 18%;left: 36%;
+    }
+    li:nth-child(2){
+      top: 18%;left: 44%;
+    }
+    li:nth-child(3){
+      top: 18%;left: 52%;
+    }
+    li:nth-child(4){
+      top: 18%;left: 60%;
+    }
+    li:nth-child(5){
+      top: 30%;left: 17%;
+    }
+    li:nth-child(6){
+      top: 45%;left: 17%;
+    }
+    li:nth-child(7){
+      top: 70%;left: 47%;
+    }
   }
 }
 
@@ -852,68 +1016,30 @@ body {
   width: 100%;
   height: 100%;
   ul {
-    background: url(../img/home/5.png) no-repeat center center;
+    background: url(../img/home/5-5.png) no-repeat center center;
+    background-size: 90% 100%;
     height: 100%;
     width: 100%;
-    li {
-      background: url("../img/home/spirit.png");
-      width: 46px;
-      height: 47px;
-      .room-switch-title {
-        color: #FFF;
-        font-family: '微软雅黑';
-        font-size: 16px;
-        font-weight: 200;
-        white-space: nowrap;
-        position: absolute;
-        text-align: center;
-        top: -20px;
-      }
+    li:nth-child(1){
+      top: 18%;left: 45%;
     }
-    li:nth-child(1) {
-      @extend .fans;
-      top: 210px;
-      left: 115px;
+    li:nth-child(2){
+      top: 18%;left: 53%;
     }
-    li:nth-child(2) {
-      @extend .lamp;
-      top: 290px;
-      left: 103px;
+    li:nth-child(3){
+      top: 18%;left: 61%;
     }
-    li:nth-child(3) {
-      @extend .lamp;
-      top: 104px;
-      left: 264px;
+    li:nth-child(4){
+      top: 30%;right: 15%;
     }
-    li:nth-child(4) {
-      @extend .lamp;
-      top: 206px;
-      left: 536px;
+    li:nth-child(5){
+      top: 45%;right: 15%;
     }
-    li:nth-child(5) {
-      @extend .lamp;
-      top: 139px;
-      left: 539px;
+    li:nth-child(6){
+      top: 70%;left: 47%;
     }
-    li:nth-child(6) {
-      @extend .lamp;
-      top: 206px;
-      left: 653px;
-    }
-    li:nth-child(7) {
-      @extend .curtain;
-      top: 253px;
-      left: 794px;
-    }
-    li:nth-child(8) {
-      @extend .fans;
-      top: 445px;
-      left: 651px;
-    }
-    li:nth-child(9) {
-      @extend .appliances;
-      top: 500px;
-      left: 554px;
+    li:nth-child(7){
+      top: 70%;left: 55%;
     }
   }
 }
@@ -923,7 +1049,8 @@ body {
   width: 100%;
   height: 100%;
   ul {
-    background: url(../img/home/4.1.png) no-repeat center center;
+    background: url(../img/home/4-4.png) no-repeat center center;
+    background-size: 90% 100%;
     height: 100%;
     width: 100%;
 
@@ -955,7 +1082,8 @@ body {
   width: 100%;
   height: 100%;
   ul {
-    background: url(../img/home/4.2.png) no-repeat center center;
+    background: url(../img/home/4-2-1.png) no-repeat center center;
+    background-size: 90% 100%;
     height: 100%;
     width: 100%;
 
@@ -976,7 +1104,7 @@ body {
     }
     li:nth-child(1) {
       @extend .lamp;
-      top: 200px;
+      top: 110px;
       left: 400px;
     }
     li:nth-child(2) {
@@ -997,49 +1125,45 @@ body {
   width: 100%;
   height: 100%;
   ul {
-    background: url(../img/home/1.png) no-repeat center center;
+    background: url(../img/home/1-1.png) no-repeat center center;
+    background-size: 90% 100%;
     height: 100%;
     width: 100%;
-
-    li {
-      background: url("../img/home/spirit.png");
-      width: 46px;
-      height: 47px;
-      .room-switch-title {
-        color: #FFF;
-        font-family: '微软雅黑';
-        font-size: 16px;
-        font-weight: 200;
-        white-space: nowrap;
-        position: absolute;
-        text-align: center;
-        top: -20px;
-      }
-    }
     li:nth-child(1) {
-      @extend .lamp;
-      top: 200px;
-      left: 380px;
+      left: 28%;top:28%;
     }
     li:nth-child(2) {
-      @extend .lamp;
-      top: 160px;
-      left: 270px;
+      left: 33%;top:28%;
     }
     li:nth-child(3) {
-      @extend .lamp;
-      top: 300px;
-      left: 400px;
+      left: 38%;top:28%;
     }
     li:nth-child(4) {
-      @extend .lamp;
-      top: 400px;
-      left: 500px;
+      left: 43%;top:28%;
     }
     li:nth-child(5) {
-      @extend .lamp;
-      top: 400px;
-      left: 700px;
+      left: 48%;top:28%;
+    }
+    li:nth-child(6) {
+      left: 58%;top: 39%;
+    }
+    li:nth-child(7) {
+      left: 58%;top: 50%;
+    }
+    li:nth-child(8) {
+      left: 25%;top:68%;
+    }
+    li:nth-child(9) {
+      left: 33%;top:68%;
+    }
+    li:nth-child(10) {
+      left: 41%;top:68%;
+    }
+    li:nth-child(11) {
+      left: 49%;top:68%;
+    }
+    li:nth-child(12) {
+      left: 57%;top:68%;
     }
   }
 }
@@ -1118,6 +1242,41 @@ body {
 }
 
 ._room1{
-  background-position: 191px 255px;
-  transform: scale(3.6);    transition: all .7s ease;
+    transform: translate(1028px,355px) scale(3.6);-webkit-transform: translate(1028px,355px) scale(3.6);
+    *{
+      visibility: hidden;
+    }
+}    
+._room2{
+    transform: translate(560px, 685px) scale(3.6);-webkit-transform: translate(560px, 685px) scale(3.6);
+    *{
+      visibility: hidden;
+    }
+}
+._room3{
+    transform: translate(-726px, 465px) scale(3.6);-webkit-transform: translate(-726px, 465px) scale(3.6);
+    *{
+      visibility: hidden;
+    }
+}
+._room4{
+    transform: translate(1030px, -190px) scale(3.6);-webkit-transform: translate(1030px, -190px) scale(3.6);
+    *{
+      visibility: hidden;
+    }
+}
+._room5{
+    transform: translate(190px, -19px) scale(3.2);-webkit-transform: translate(190px, -19px) scale(3.2);
+    *{
+      visibility: hidden;
+    }
+}
+._room6{
+    transform: translate(-580px, -180px) scale(2.6);-webkit-transform: translate(-580px, -180px) scale(2.6);
+    *{
+      visibility: hidden;
+    }
+}
+.blurBg{
+  -webkit-filter: blur(15px);
 }

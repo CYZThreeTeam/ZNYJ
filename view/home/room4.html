@@ -1,12 +1,12 @@
 <div class="room4-bg mainContent">
-  <div class="map" ui-sref='main.home'>
+  <div class="map" ng-click="backHome()">
     <img src="/img/home/bedroomMap.png" alt="">
   </div>
   <div class="room-header">
     <label class="room-header-lab">厨房</label>
     <label class="room-header-lab">Kitchen Room</label>
   </div>
-  <ul class="room4-ul">
+  <ul class="room4-ul roomControl">
     <li class="{{key}} {{val[3]}}" ng-repeat="(key,val) in nowDevice" ng-class="{true:'open',false:''}[val[2]=='00ff']" ng-click="changeStatus(key)">
       <label  class="room-switch-title">{{val[0]}}</label>
     </li>
