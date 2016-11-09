@@ -1,11 +1,14 @@
 <div class="society-group">
   <div class="society-map">
     <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
+      <li ng-click="showMonitoring(1)">1</li>
+      <li ng-click="showMonitoring(2)">2</li>
+      <li ng-click="showMonitoring(3)">3</li>
+      <li ng-click="showMonitoring(4)">4</li>
     </ul>
   </div>
   <div class="society-items"></div>
+  <div class="Monitoring" ng-class="{true:'',false:'hide'}[MonitoringStatus==true]">
+  	<p class="name">{{$scope.MonitoringName}}</p>
+  </div>
 </div>

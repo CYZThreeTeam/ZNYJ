@@ -1,6 +1,6 @@
 angular.module('app.controllers', [])
   .config(function($ionicConfigProvider) {
-    $ionicConfigProvider.views.transition('none');
+    // $ionicConfigProvider.views.transition('none');
   })
   .controller('loginCtrl', function ($scope, $state, $ionicViewSwitcher) {
     $scope.login = true;
@@ -13,8 +13,9 @@ angular.module('app.controllers', [])
       // $ionicViewSwitcher.nextDirection("forward");
     }
   })
-  .controller('mainCtrl', function ($scope, $state, $http, $q, $ionicViewSwitcher,model302) {
+  .controller('mainCtrl', function ($scope, $state, $http, $q, $ionicViewSwitcher,model302,$ionicConfig) {
     $scope.name = '管理员';
+    $scope.animate = $ionicConfig.views.transition;
     $scope.nowModule = 1;
     //控制顶部和底部是否隐藏
     $scope.headShow = true;
@@ -39,8 +40,14 @@ angular.module('app.controllers', [])
     }
     //路由切换
     $scope.moduleChange = function (module_id, room_id) {
-      // if($scope.nowModule!=module_id){
-      console.log(module_id + '--' + room_id);
+      // // if($scope.nowModule!=module_id){
+      // console.log(module_id + '--' + room_id);
+      if(module_id == 1 && room_id != 0){
+        console.log(room_id);
+        $scope.animate('none');
+      }else{
+        $scope.animate('ios');
+      }
       switch (module_id) {
         case 0:
           $state.go('login', {reload: true});
@@ -188,6 +195,10 @@ angular.module('app.controllers', [])
 
   .controller('societyCtrl', function ($scope, $state) {
     $scope.moduleChange(2, 0);
+    $scope.showMonitoring = function(index){
+      $scope.MonitoringName = index;
+      $scope.MonitoringStatus = true;
+    }
   }).controller('lifeCtrl', function ($scope, $state) {
     $scope.moduleChange(3, 0);
 }).controller('neighborCtrl', function ($scope, $state) {
