@@ -70,7 +70,7 @@
         <ion-content class="chatContet">
           <div ng-repeat="item in datas" class="f_{{item.who}}">
             <img src="{{item.imgSrc}}" alt="">
-            <div class="dib">{{item.data}}</div>
+            <div class="dib" data-ng-bind-html='item.data'></div>
           </div>
          
         </ion-content>
