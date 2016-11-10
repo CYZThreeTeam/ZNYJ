@@ -217,7 +217,7 @@ angular.module('app.controllers', [])
     }
   }).controller('lifeCtrl', function ($scope, $state) {
     $scope.moduleChange(3, 0);
-}).controller('neighborCtrl', function ($scope, $state) {
+}).controller('neighborCtrl', function ($scope, $state,$ionicScrollDelegate) {
   $scope.headStatus(false);
   $scope.moduleChange(4, 0);
   $scope.datas = [
@@ -228,6 +228,7 @@ angular.module('app.controllers', [])
   $scope.send = function(){
     var val = gg.innerHTML;
     $scope.datas.push({'who':'r','data':val,'imgSrc':'/img/home/test1.png'});
+    $ionicScrollDelegate.scrollBottom();
   }
 }).controller('roomCtrl', function ($scope, $state) {
 
