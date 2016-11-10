@@ -43,7 +43,7 @@ angular.module('app.controllers', [])
     $scope.moduleChange = function (module_id, room_id) {
       // // if($scope.nowModule!=module_id){
       // console.log(module_id + '--' + room_id);
-      if(module_id == 1 && room_id != 0){
+      if(module_id == 1 && (room_id != 0 && room_id != undefined) ){
         console.log(room_id);
         $scope.animate('none');
       }else{
