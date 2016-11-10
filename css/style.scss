@@ -1319,7 +1319,7 @@ body {
     width: 100%;
 
     li {
-      background: url("../img/home/spirit.png");
+      backgroun-image: url("../img/home/spirit.png");
       width: 46px;
       height: 47px;
       .room-switch-title {
@@ -1347,6 +1347,11 @@ body {
       @extend .lamp;
       top: 300px;
       left: 300px;
+    }
+    li:nth-child(4) {
+      @extend .lamp;
+      top: 300px;
+      left: 210px;
     }
   }
 }

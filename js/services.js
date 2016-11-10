@@ -51,7 +51,7 @@ angular.module('app.services', [])
   'diningRoom':{
     'kingLight':['主灯','021C159E','0000','lamp'],
     'shootLamp':['射灯','022C159E','0000','lamp'],
-    'LampWith':['灯带','024C159E','0000','lamp'],
+    'LampWith1':['灯带','024C159E','0000','lamp'],
     'LampWith':['鞋柜灯','023C159E','0000','lamp'],
   },
   //厨房

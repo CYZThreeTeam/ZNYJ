@@ -174,6 +174,7 @@ angular.module('app.controllers', [])
   .controller('room5Ctrl', function ($scope, $state,model302,Switch) {
     $scope.moduleChange(1, 5);
     $scope.nowDevice = model302.diningRoom;
+    console.log($scope.nowDevice);
     $scope.changeStatus = function(name){
       Switch.$set(model302.room_id,$scope.nowDevice[name]).then(function(data){
         $scope.nowDevice[name][2] == '0000' ? $scope.nowDevice[name][2] = '00ff':$scope.nowDevice[name][2] = '0000';
