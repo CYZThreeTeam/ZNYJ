@@ -949,14 +949,14 @@ body {
               height: 75%;width: 77%;left: 15%;top: 2%;color:#fff;
               .f_l,.f_r{
                 width:100%;animation:InfoFadeIn .5s ease;-webkit-animation:InfoFadeIn .5s ease;
-                margin-bottom: 5px;
+                margin-bottom: 15px;
                 img{
                     border-radius: 50%;
                     padding: 1px;
                     border: 1px solid #4b5263;
                     width: 45px;
                     height: 45px;
-                    vertical-align: middle;
+                    vertical-align: middle;margin-right: 5px;
                 }
                 .dib{
                       vertical-align: top;
@@ -971,6 +971,7 @@ body {
               }
               .f_r {
                 text-align: right;
+                img{float:right;margin-left: 5px;margin-right: 0;}
                 .dib{
                   background-color:#3da4a1;
                 }
