@@ -88,7 +88,8 @@ angular.module('app.services', [])
     value == '0000'?value='00ff':value='0000';
     var deferred = $q.defer();
     $http({
-      url: 'http://120.24.45.231:3000/control',
+      // url: 'http://120.24.45.231:3000/control',
+      url:'http://139.196.115.11:3000/control',
       method: "POST",
       data: {
         room_id: room_id, deviceId: deviceId, value: value
