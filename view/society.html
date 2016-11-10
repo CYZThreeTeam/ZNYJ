@@ -7,8 +7,14 @@
       <li ng-click="showMonitoring(4)">4</li>
     </ul>
   </div>
-  <div class="society-items"></div>
-  <div class="Monitoring" ng-class="{true:'',false:'hide'}[MonitoringStatus==true]">
-  	<p class="name">{{$scope.MonitoringName}}</p>
+  <div class="society-items">
+    <div class="repairBtn" ng-click="showRepair()"></div>
+    <div class="more" ng-click="showMore()"></div>
   </div>
+  <div class="Monitoring" ng-class="{true:'',false:'hide'}[MonitoringStatus==true]">
+  	<p class="name">{{MonitoringName}}</p>
+  </div>
+  <div class="repair" ng-class="{true:'',false:'hide'}[repairStatus==true]"></div>
+  <div class="moreRecord" ng-class="{true:'',false:'hide'}[moreStatus==true]"></div>
 </div>
+<div id="shade" ng-click="shadeClick()" ng-class="{true:'ac',false:''}[shade==true]"></div>

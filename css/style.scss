@@ -2,7 +2,8 @@
 @import 'animation.scss';
 @import 'common.scss';
 @import 'layout.scss';
-
+.f_l{float:left;}.f_r{float:right;}
+.dib{display: inline-block;}
 body {
   background: url(../img/home/bg.png) no-repeat;
 }
@@ -42,6 +43,7 @@ body {
   visibility: hidden;
 }
 .home .main-footer.footerShow {
+  width:100%;
   .home-footer {
     width: 100%;
     height: 100%;
@@ -657,8 +659,54 @@ body {
   width: 100%;
   height: 100%;
   background: url(../img/home/bg.png) no-repeat;
+  .repairBtn{
+    position: absolute;
+    top: 50px;
+    width: 25px;
+    height: 25px;
+    right: 132px;
+  }
+  .more{
+    position: absolute;
+    height: 25px;
+    width: 60px;
+    right: 16px;
+    top: 118px;
+  }
+  .Monitoring{
+    -webkit-animation:InfoFadeIn .7s ease forwards;z-index: 100;
+    background:url(/img/home/monitoring.png) no-repeat;
+    width:480px;height:270px;background-size:100% 100%;
+    position: absolute;left:50%;top:50%;
+    margin-left: -240px;margin-top: -135px;
+    .name{
+      color: #fff;
+      position: absolute;
+      top: 18px;
+      left: 50px;
+    }
+  }
+  .repair{
+    -webkit-animation:InfoFadeIn .7s ease forwards;z-index: 100;
+    background:url(/img/home/repair.png) no-repeat;
+    width:411px;height:394px;background-size:100% 100%;
+    position: absolute;left:50%;top:50%;
+    margin-left: -205.5px;margin-top: -197px;
+  }
+  .moreRecord{
+    -webkit-animation:InfoFadeIn .7s ease forwards;z-index: 100;
+    background:url(/img/home/moreRecord.png) no-repeat;
+    width:578px;height:331px;background-size:100% 100%;
+    position: absolute;left:50%;top:50%;
+    margin-left: -205.5px;margin-top: -197px;
+  }
 }
-
+#shade{
+  position: fixed;top:0;left:0;width:100%;height:100%;visibility:hidden;z-index: 99;
+  &.ac{
+    visibility: visible;
+  }
+}
 .society-map {
   position: relative;
   width: 74%;
@@ -737,46 +785,228 @@ body {
 }
 
 .neighbor-group {
-  display: -webkit-flex;
+  display: -webkit-flex;flex-direction: column;
   width: 100%;
   height: 100%;
   background: url(../img/home/bg.png) no-repeat;
+  .chat-head{
+    height:72px;background-color:#01d6c4;color:#fff;position: relative;line-height: 72px;
+    h2{font-size: 24px;text-align: center;color:#fff;line-height: 72px;}
+    .f_l{
+      background: url(../img/home/lin4.png) no-repeat left center;position: absolute;top:0;height:72px;
+      background-size:28px 20px;padding-left:60px;left:20px;
+      img{
+        border-radius:50%;border:1px solid #fff;padding:1px;background-color:#01d6c4;
+        width:40px;height:40px;vertical-align:middle;
+      }
+      .dib {
+        vertical-align:middle;
+        p{
+          line-height: 1;margin:5px 0;
+          &.name{font-size: 16px;}
+          &.introduced{font-size: 12px;}
+        }
+      }
+    }
+    .f_r{
+      background: url(../img/home/setting.png) no-repeat right center;position: absolute;top:0;right:20px;height:72px;
+      width: 22px;height:100%;;background-size:100%;
+    }
+  }
+  .title{
+      font-size: 12px;height:50px;line-height: 50px;
+      // background-color:#4d5667;
+      background:url(/img/home/lin_t1.png) no-repeat left top;
+      background-size:100% 100%;
+      color: #fff;padding:0 17px;margin-bottom: 0;margin-top: 0;
+      span{
+        background:url(/img/home/r.png) no-repeat left center;
+        padding-left:15px;margin-left: 13px;color:#ccc;background-size:5px 5.5px;
+      }
+      .topParent{
+        padding-left:20px;background:url(/img/home/lin3.png) no-repeat left center;
+        background-size:12px 12px;margin-left: 0;
+      }
+      .date{
+        font-size: 14px;
+      }
+    }
   .chat-group {
-    width: 100%;
+    width: 100%;display:-webkit-flex;
+    // padding-bottom:123px;
     height: 100%;
-    background: url(../img/neighbor/content_bg1.jpg) no-repeat;
+    // background: url(../img/neighbor/content_bg1.jpg) no-repeat;
     background-size: 100% 100%;
     .chat-list {
-      position: absolute;
-      top: 180px;
-      left: 0px;
+      background-color:#1d2331;height:100%;
       width: 275px;
-      height: 300px;
-      display: -webkit-box;
-      -webkit-box-align: center;
-      -webkit-box-pack: center;
-      -webkit-box-orient: vertical;
+      box-sizing:border-box;-webkit-box-sizing:border-box;padding:10px 0;
+      .search{
+        width:255px;border-radius:5px;padding:2px;overflow:hidden;background: url(/img/home/input.png) no-repeat;
+        background-size:cover;margin: 0 auto 25px;
+        button{
+          width:45px;height:42px;background:#3b3f4a url(/img/home/Search-icon.png) no-repeat center center;
+          background-size:21px 21px;border:none;vertical-align:top;display: inline-block;
+        }
+        input{
+          height: 42px;background-color:transparent;border:none;vertical-align:top;display: inline-block;
+          width:205px;color:#fff;
+          padding-left:15px;
+        }
+      }
       .chat-list-item {
-        /*background: url(../img/neighbor/1_22.png) no-repeat;*/
-        width: 275px;
-        height: 60px;
-        background-size: 100% 100%;
+        height: 70px;line-height: 70px;position: relative;padding: 0 10px;
+        background:transparent url(/img/home/line.png) repeat-x left bottom;background-size: auto 1px;
+        &:hover{
+          background-color:#01d6c4;
+          .status{
+            border:1px solid #fff;
+          }
+          .introduced{
+            color:#fff !important;
+            background-image: url(/img/home/lin2-1.png) !important;
+          }
+          &:after{
+              content: ' ';
+              position: absolute;
+              right: -7px;
+              width: 14px;
+              height: 14px;
+              transform: translateY(-50%) rotate(45deg);
+              top: 50%;
+              z-index: 2;
+              background-color: #01d6c4;
+          }
+        }
+        img{
+          border-radius:50%;padding:1px;border:1px solid #4b5263;width:45px;height:45px;
+          vertical-align: middle;
+        }
+        .dib{
+          vertical-align: middle;margin-left: 10px;
+          p{
+            color:#fff;margin:2px 0;line-height: 1.5;
+            &.introduced{
+              color:#00d5c3;font-size: 12px;background:url(/img/home/lin2.png) no-repeat left center;
+              background-size:10px 15px;padding-left:18px;
+            }
+          }
+        }
+        .status{
+          border-radius:50%;width:15px;height:15px;background-color:#01d6c4;position: absolute;
+          top:50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);right:10px;
+          box-sizing: border-box;-webkit-box-sizing: border-box;
+        }
       }
 
     }
     .chat_content {
-      position: absolute;
-      top: 120px;
-      left: 275px;
-      width: 700px;
-      height: 575px;
-      display: -webkit-box;
-      -webkit-box-align: center;
-      -webkit-box-pack: center;
-      -webkit-box-orient: vertical;
-      /*background: url(../img/neighbor/content_bg.png) no-repeat;*/
-      background-size: 100% 100%;
-
+      flex-grow: 5;display:-webkit-flex;flex-direction: column;
+      .chat_info1{
+        height:183px;
+        background:url(/img/home/lin_t2.png) no-repeat left top;
+        background-size:100% 100%;color:#fff;
+        display: -webkit-flex;
+        -webkit-flex-direction: row;
+        -webkit-align-items: center;padding:0 5%;
+        p{
+          margin:5px 0;
+        }
+        .position{
+          margin:12px 0 7px 0;
+        }
+        .headImg{
+          border:1px solid #96a1b3;border-radius: 50%;
+          padding:4px;margin-right: 15px;
+          width:116px;height:116px;box-sizing: border-box;-webkit-box-sizing: border-box;
+        }
+        .name{
+              font-size: 28px;
+              font-weight: bold;
+              color: #fff;
+        }
+        .area{
+          font-size: 20px;color:#01d6c4;
+          margin-bottom: 10px;
+        }
+        .tel1{
+              background: url(/img/home/lin1.png) no-repeat left center;
+              background-size: auto 80%;
+              padding-left: 20px;
+              margin-right: 10px;
+        }
+        .phone1{
+              background: url(/img/home/lin1.png) no-repeat -116px center;
+              background-size: auto 80%;
+              padding-left: 20px;
+        }
+      }
+      .chat_info2{
+        flex-grow: 5;position: relative;
+        background:url(/img/home/lin_t3.png) no-repeat left top;
+        background-size:100% 100%;
+        .chatContet{
+              height: 75%;width: 77%;left: 15%;top: 2%;color:#fff;
+              .f_l,.f_r{
+                width:100%;animation:InfoFadeIn .5s ease;-webkit-animation:InfoFadeIn .5s ease;
+                margin-bottom: 5px;
+                img{
+                    border-radius: 50%;
+                    padding: 1px;
+                    border: 1px solid #4b5263;
+                    width: 45px;
+                    height: 45px;
+                    vertical-align: middle;
+                }
+                .dib{
+                      vertical-align: top;
+                      margin-top:15px;
+                      background-color: #757984;
+                      border-radius: 15px;
+                      padding: 8px 15px;
+                      box-sizing: border-box;
+                      max-width: 185px;
+                      word-break: break-all;text-align: left;
+                }
+              }
+              .f_r {
+                text-align: right;
+                .dib{
+                  background-color:#3da4a1;
+                }
+              }
+                
+        }
+        .input{
+              position: absolute;bottom: 0;left: 0;display: -webkit-flex;bottom: 6%;min-height: 40px;
+              left: 50%;transform: translateX(-50%);
+              .dib{
+                    width: 470px;
+                    background: #fff;
+                    min-height: 40px;
+                    border-radius: 8px;
+                    margin-right: 10px;
+                    line-height: 20px;
+                    padding-left: 15px;
+                    padding: 10px 15px;
+                    max-height: 100px;
+                    overflow: auto;
+              }
+              .camera{
+                background: url(/img/home/camera-icon.png) no-repeat;
+                margin-top:9px;    margin-right: 10px;
+                background-size: cover;
+                width: 23.5px;border:none;
+                height: 23.5px;
+              }
+              .send{
+                    height: 40px;white-space: nowrap;
+                    border: none;
+                    background: transparent;
+                    color: #fff;
+              }
+        }
+      }
     }
   }
 }

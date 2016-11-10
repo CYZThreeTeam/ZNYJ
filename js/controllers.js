@@ -16,6 +16,7 @@ angular.module('app.controllers', [])
   .controller('mainCtrl', function ($scope, $state, $http, $q, $ionicViewSwitcher,model302,$ionicConfig) {
     $scope.name = '管理员';
     $scope.animate = $ionicConfig.views.transition;
+    $scope.shade = false;
     $scope.nowModule = 1;
     //控制顶部和底部是否隐藏
     $scope.headShow = true;
@@ -198,12 +199,36 @@ angular.module('app.controllers', [])
     $scope.showMonitoring = function(index){
       $scope.MonitoringName = index;
       $scope.MonitoringStatus = true;
+      $scope.shade = true;
+    }
+    $scope.showRepair = function(index){
+      $scope.repairStatus = true;
+      $scope.shade = true;
+    }
+    $scope.showMore = function(index){
+      $scope.moreStatus = true;
+      $scope.shade = true;
+    }
+    $scope.shadeClick = function(){
+      $scope.MonitoringStatus = false;
+      $scope.repairStatus = false;
+      $scope.moreStatus = false;
+      $scope.shade = false;
     }
   }).controller('lifeCtrl', function ($scope, $state) {
     $scope.moduleChange(3, 0);
 }).controller('neighborCtrl', function ($scope, $state) {
   $scope.headStatus(false);
   $scope.moduleChange(4, 0);
+  $scope.datas = [
+  {'who':'l','data':'你在哪里？','imgSrc':'/img/home/test.png'},
+  {'who':'r','data':'我在珠海周末要不要聚一聚？','imgSrc':'/img/home/test1.png'},
+  ];
+  var gg= document.getElementById('sendInfo');
+  $scope.send = function(){
+    var val = gg.innerHTML;
+    $scope.datas.push({'who':'r','data':val,'imgSrc':'/img/home/test1.png'});
+  }
 }).controller('roomCtrl', function ($scope, $state) {
 
 });

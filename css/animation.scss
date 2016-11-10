@@ -45,9 +45,9 @@
     opacity: 0;
     -webkit-transform: translateY(-20px)
   }
-  50% {
+  /*50% {
     opacity: 0.5;
-  }
+  }*/
   100% {
     opacity: 1;
     -webkit-transform: translateY(0px);
@@ -60,9 +60,9 @@
     opacity: 1;
     -webkit-transform: translateY(0px);
   }
-  50% {
+  /*50% {
     opacity: 0.5;
-  }
+  }*/
   100% {
     opacity: 0;
     -webkit-transform: translateY(-20px);
@@ -85,5 +85,17 @@
 
   100% {
     -webkit-filter: blur(0px);
+  }
+}
+
+@-webkit-keyframes InfoFadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    visibility: visible;
   }
 }
