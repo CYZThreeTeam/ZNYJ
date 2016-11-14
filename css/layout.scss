@@ -74,21 +74,18 @@
             position: relative;
             transition: all .5s ease;-webkit-transition:all .5s ease;
             opacity: 1;
-
             width: 50px;
-            // transform: translate(60px,90px);
             left:60px;top:90px;
             height: 50px;
             border-radius: 50%;
             box-sizing: border-box;
-            
-            // background-color: rgb(171, 167, 167);
             .footerCircle{
                 position: absolute;border: 5px solid #ccc;border-radius:50%;
                 left: 0px;
                 top: 0px;
                 width: 50px;
                 height: 50px;
+                background-color:rgba(0,0,0,.5);
                 .l,.r{
                     position: absolute;
                     left: -5px;
