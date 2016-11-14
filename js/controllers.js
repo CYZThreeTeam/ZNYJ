@@ -27,24 +27,11 @@ angular.module('app.controllers', [])
     $scope.headStatus = function (status) {
       $scope.headShow = status;
     };
-    //回到首页
-    $scope.backHome = function(){
-      $scope.showChild = false;
-      $state.go('main.home', {reload: true});
-    }
-    //定位房间
-    $scope.position = function(status){
-      $scope.showChild = status;
-      setTimeout(function() {
-        $state.go('main.room'+status, {reload: true});
-      }, 500);
-    }
+    
+    
     //路由切换
     $scope.moduleChange = function (module_id, room_id) {
-      // // if($scope.nowModule!=module_id){
-      // console.log(module_id + '--' + room_id);
       if(module_id == 1 && (room_id != 0 && room_id != undefined) ){
-        console.log(room_id);
         $scope.animate('none');
       }else{
         $scope.animate('ios');
@@ -93,7 +80,6 @@ angular.module('app.controllers', [])
       }
 
       $scope.nowModule = module_id;
-      // }
     };
     $scope.icon_on = 0;
     $scope.iconChange = function (icon_id) {
@@ -105,7 +91,8 @@ angular.module('app.controllers', [])
     };
 
   })
-  .controller('homeCtrl', function ($scope, $state) {
+// 家 控制器
+  .controller('homeCtrl', function ($scope, $state,model302,Switch) {
     $scope.headShow = true;
     $scope.moduleChange(1);
 
@@ -118,18 +105,32 @@ angular.module('app.controllers', [])
     $scope.controlStateChange = function (control_id) {
       $scope.controlState = control_id;
     };
+    /*2016/11/14[CLX]*/
+    $scope.nowDevice = [];
+    //发送http请求，改变设备状态
+    $scope.changeStatus = function(name){
+      Switch.$set(model302.room_id,$scope.nowDevice[name]).then(function(data){
+        $scope.nowDevice[name][2] == '0000' ? $scope.nowDevice[name][2] = '00ff':$scope.nowDevice[name][2] = '0000';
+      });
+    }
+    //定位到指定房间
+    $scope.position = function(status){
+      $scope.nowDevice = model302[status+''];
+      $scope.showChild = status;
+    }
+    //回到全局视图
+    $scope.backHome = function(){
+      $scope.nowDevice = [];
+      $scope.showChild = '';
+      $state.go('main.home', {reload: true});
+    }
   })
   /**
    * 儿童房Controller
    */
   .controller('room1Ctrl', function ($scope,model302,Switch) {
     $scope.moduleChange(1, 1);
-    $scope.nowDevice = model302.childrenRoom;
-    $scope.changeStatus = function(name){
-      Switch.$set(model302.room_id,$scope.nowDevice[name]).then(function(data){
-        $scope.nowDevice[name][2] == '0000' ? $scope.nowDevice[name][2] = '00ff':$scope.nowDevice[name][2] = '0000';
-      });
-    }
+    
   })
   /**
    * 次卧Controller

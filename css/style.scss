@@ -23,7 +23,7 @@ body {
   background: url("../img/home/bg.png") no-repeat center center;
   /*-webkit-animation:blur 1s ease;*/
   .map {
-    position: absolute;
+    position: absolute;z-index: 5;
     left: 25px;
     top: 25px;
   }
@@ -1192,238 +1192,6 @@ body {
 
     }
 }
-.room1-bg {
-  display: -webkit-flex;
-  width: 100%;
-  height: 100%;
-  ul {
-    background: url(../img/home/2-2.png) no-repeat center center;
-    background-size: 90% 100%;
-    height: 100%;
-    width: 100%;
-    li:nth-child(1){
-      top: 18%;left: 37%;
-    }
-    li:nth-child(2){
-      top: 18%;left: 45%;
-    }
-    li:nth-child(3){
-      top: 18%;left: 53%;
-    }
-    li:nth-child(4){
-      top: 30%;left: 15%;
-    }
-    li:nth-child(5){
-      top: 45%;left: 15%;
-    }
-    li:nth-child(6){
-      top: 70%;left: 47%;
-    }
-  }
-}
-
-.room2-bg {
-  display: -webkit-flex;
-  width: 100%;
-  height: 100%;
-  ul {
-    background: url(../img/home/3-3.png) no-repeat center center;
-    background-size: 90% 100%;
-    height: 100%;
-    width: 100%;
-    li:nth-child(1){
-      top: 18%;left: 36%;
-    }
-    li:nth-child(2){
-      top: 18%;left: 44%;
-    }
-    li:nth-child(3){
-      top: 18%;left: 52%;
-    }
-    li:nth-child(4){
-      top: 18%;left: 60%;
-    }
-    li:nth-child(5){
-      top: 30%;left: 17%;
-    }
-    li:nth-child(6){
-      top: 45%;left: 17%;
-    }
-    li:nth-child(7){
-      top: 70%;left: 47%;
-    }
-  }
-}
-
-.room3-bg {
-  display: -webkit-flex;
-  width: 100%;
-  height: 100%;
-  ul {
-    background: url(../img/home/5-5.png) no-repeat center center;
-    background-size: 90% 100%;
-    height: 100%;
-    width: 100%;
-    li:nth-child(1){
-      top: 18%;left: 45%;
-    }
-    li:nth-child(2){
-      top: 18%;left: 53%;
-    }
-    li:nth-child(3){
-      top: 18%;left: 61%;
-    }
-    li:nth-child(4){
-      top: 30%;right: 15%;
-    }
-    li:nth-child(5){
-      top: 45%;right: 15%;
-    }
-    li:nth-child(6){
-      top: 70%;left: 47%;
-    }
-    li:nth-child(7){
-      top: 70%;left: 55%;
-    }
-  }
-}
-
-.room4-bg {
-  display: -webkit-flex;
-  width: 100%;
-  height: 100%;
-  ul {
-    background: url(../img/home/4-4.png) no-repeat center center;
-    background-size: 90% 100%;
-    height: 100%;
-    width: 100%;
-
-    li {
-      background-image: url("../img/home/spirit.png");
-      width: 46px;
-      height: 47px;
-      .room-switch-title {
-        color: #FFF;
-        font-family: '微软雅黑';
-        font-size: 16px;
-        font-weight: 200;
-        white-space: nowrap;
-        position: absolute;
-        text-align: center;
-        top: -20px;
-      }
-    }
-    li:nth-child(1) {
-      @extend .lamp;
-      top: 356px;
-      left: 693px;
-    }
-    li:nth-child(2) {
-      top: 356px;
-      left: 633px;
-    }
-    li:nth-child(3) {
-      top: 356px;
-      left: 553px;
-    }
-  }
-}
-
-.room5-bg {
-  display: -webkit-flex;
-  width: 100%;
-  height: 100%;
-  ul {
-    background: url(../img/home/4-2-1.png) no-repeat center center;
-    background-size: 90% 100%;
-    height: 100%;
-    width: 100%;
-
-    li {
-      backgroun-image: url("../img/home/spirit.png");
-      width: 46px;
-      height: 47px;
-      .room-switch-title {
-        color: #FFF;
-        font-family: '微软雅黑';
-        font-size: 16px;
-        font-weight: 200;
-        white-space: nowrap;
-        position: absolute;
-        text-align: center;
-        top: -20px;
-      }
-    }
-    li:nth-child(1) {
-      @extend .lamp;
-      top: 110px;
-      left: 400px;
-    }
-    li:nth-child(2) {
-      @extend .lamp;
-      top: 390px;
-      left: 300px;
-    }
-    li:nth-child(3) {
-      @extend .lamp;
-      top: 300px;
-      left: 300px;
-    }
-    li:nth-child(4) {
-      @extend .lamp;
-      top: 300px;
-      left: 210px;
-    }
-  }
-}
-
-.room6-bg {
-  display: -webkit-flex;
-  width: 100%;
-  height: 100%;
-  ul {
-    background: url(../img/home/1-1.png) no-repeat center center;
-    background-size: 90% 100%;
-    height: 100%;
-    width: 100%;
-    li:nth-child(1) {
-      left: 28%;top:28%;
-    }
-    li:nth-child(2) {
-      left: 33%;top:28%;
-    }
-    li:nth-child(3) {
-      left: 38%;top:28%;
-    }
-    li:nth-child(4) {
-      left: 43%;top:28%;
-    }
-    li:nth-child(5) {
-      left: 48%;top:28%;
-    }
-    li:nth-child(6) {
-      left: 58%;top: 39%;
-    }
-    li:nth-child(7) {
-      left: 58%;top: 50%;
-    }
-    li:nth-child(8) {
-      left: 25%;top:68%;
-    }
-    li:nth-child(9) {
-      left: 33%;top:68%;
-    }
-    li:nth-child(10) {
-      left: 41%;top:68%;
-    }
-    li:nth-child(11) {
-      left: 49%;top:68%;
-    }
-    li:nth-child(12) {
-      left: 57%;top:68%;
-    }
-  }
-}
 
 .room-header {
   position: absolute;
@@ -1497,42 +1265,219 @@ body {
       }
     }
 }
-
-._room1{
-    transform: translate(1028px,355px) scale(3.6);-webkit-transform: translate(1028px,355px) scale(3.6);
+//设备样式
+.device{
+  position: absolute;
+  left:0;top:0;
+  height: 100%;
+  width: 100%;
+  &.Device {
+    z-index: -1;
+    li{
+        visibility: hidden !important;display:none;
+    }
+  }
+  li {
+      background-image: url("../img/home/spirit.png");
+      width: 46px;
+      height: 47px;
+      .room-switch-title {
+        color: #FFF;
+        font-family: '微软雅黑';
+        font-size: 16px;
+        font-weight: 200;
+        white-space: nowrap;
+        position: absolute;
+        text-align: center;
+        top: -20px;
+        left: 50%;
+        transform: translate(-50%);-webkit-transform: translate(-50%);
+      }
+      opacity: 0;visibility:hidden;
+      animation:InfoFadeIn .5s ease .7s forwards;
+      -webkit-animation:InfoFadeIn .5s ease .7s forwards;
+    }
+}
+//房间定位
+.childrenRoom{
+    transform: translate(950px, 290px) scale(3.4);
+    -webkit-transform: translate(950px, 290px) scale(3.4);
     *{
       visibility: hidden;
     }
-}    
-._room2{
+}
+
+.subalternRoom{
     transform: translate(560px, 685px) scale(3.6);-webkit-transform: translate(560px, 685px) scale(3.6);
     *{
       visibility: hidden;
     }
 }
-._room3{
+.masterRoom{
     transform: translate(-726px, 465px) scale(3.6);-webkit-transform: translate(-726px, 465px) scale(3.6);
     *{
       visibility: hidden;
     }
 }
-._room4{
+.kitchenRoom{
     transform: translate(1030px, -190px) scale(3.6);-webkit-transform: translate(1030px, -190px) scale(3.6);
     *{
       visibility: hidden;
     }
 }
-._room5{
+.diningRoom{
     transform: translate(190px, -19px) scale(3.2);-webkit-transform: translate(190px, -19px) scale(3.2);
     *{
       visibility: hidden;
     }
 }
-._room6{
+.livingRoom{
     transform: translate(-580px, -180px) scale(2.6);-webkit-transform: translate(-580px, -180px) scale(2.6);
     *{
       visibility: hidden;
     }
+}
+//房间设备定位
+.childrenRoomDevice{
+    li:nth-child(1){
+      top: 18%;left: 37%;
+    }
+    li:nth-child(2){
+      top: 18%;left: 45%;
+    }
+    li:nth-child(3){
+      top: 18%;left: 53%;
+    }
+    li:nth-child(4){
+      top: 30%;left: 15%;
+    }
+    li:nth-child(5){
+      top: 45%;left: 15%;
+    }
+    li:nth-child(6){
+      top: 70%;left: 47%;
+    }
+}
+.subalternRoomDevice{
+  li:nth-child(1){
+    top: 18%;left: 36%;
+  }
+  li:nth-child(2){
+    top: 18%;left: 44%;
+  }
+  li:nth-child(3){
+    top: 18%;left: 52%;
+  }
+  li:nth-child(4){
+    top: 18%;left: 60%;
+  }
+  li:nth-child(5){
+    top: 30%;left: 17%;
+  }
+  li:nth-child(6){
+    top: 45%;left: 17%;
+  }
+  li:nth-child(7){
+    top: 70%;left: 47%;
+  }
+}
+.masterRoomDevice{
+  li:nth-child(1){
+    top: 18%;left: 45%;
+  }
+  li:nth-child(2){
+    top: 18%;left: 53%;
+  }
+  li:nth-child(3){
+    top: 18%;left: 61%;
+  }
+  li:nth-child(4){
+    top: 30%;right: 15%;
+  }
+  li:nth-child(5){
+    top: 45%;right: 15%;
+  }
+  li:nth-child(6){
+    top: 70%;left: 47%;
+  }
+  li:nth-child(7){
+    top: 70%;left: 55%;
+  }
+}
+.kitchenRoomDevice{
+  li:nth-child(1) {
+    @extend .lamp;
+    top: 356px;
+    left: 693px;
+  }
+  li:nth-child(2) {
+    top: 356px;
+    left: 633px;
+  }
+  li:nth-child(3) {
+    top: 356px;
+    left: 553px;
+  }
+}
+.diningRoomDevice{
+  li:nth-child(1) {
+    @extend .lamp;
+    top: 110px;
+    left: 400px;
+  }
+  li:nth-child(2) {
+    @extend .lamp;
+    top: 390px;
+    left: 300px;
+  }
+  li:nth-child(3) {
+    @extend .lamp;
+    top: 300px;
+    left: 300px;
+  }
+  li:nth-child(4) {
+    @extend .lamp;
+    top: 300px;
+    left: 210px;
+  }
+}
+.livingRoomDevice{
+  li:nth-child(1) {
+    left: 28%;top:28%;
+  }
+  li:nth-child(2) {
+    left: 33%;top:28%;
+  }
+  li:nth-child(3) {
+    left: 38%;top:28%;
+  }
+  li:nth-child(4) {
+    left: 43%;top:28%;
+  }
+  li:nth-child(5) {
+    left: 48%;top:28%;
+  }
+  li:nth-child(6) {
+    left: 58%;top: 39%;
+  }
+  li:nth-child(7) {
+    left: 58%;top: 50%;
+  }
+  li:nth-child(8) {
+    left: 25%;top:68%;
+  }
+  li:nth-child(9) {
+    left: 33%;top:68%;
+  }
+  li:nth-child(10) {
+    left: 41%;top:68%;
+  }
+  li:nth-child(11) {
+    left: 49%;top:68%;
+  }
+  li:nth-child(12) {
+    left: 57%;top:68%;
+  }
 }
 .blurBg{
   -webkit-filter: blur(15px);
