@@ -125,76 +125,6 @@ angular.module('app.controllers', [])
       $state.go('main.home', {reload: true});
     }
   })
-  /**
-   * 儿童房Controller
-   */
-  .controller('room1Ctrl', function ($scope,model302,Switch) {
-    $scope.moduleChange(1, 1);
-    
-  })
-  /**
-   * 次卧Controller
-   */
-  .controller('room2Ctrl', function ($scope, $state,model302,Switch) {
-    $scope.moduleChange(1, 2);
-    $scope.nowDevice = model302.subalternRoom;
-    $scope.changeStatus = function(name){
-      Switch.$set(model302.room_id,$scope.nowDevice[name]).then(function(data){
-        $scope.nowDevice[name][2] == '0000' ? $scope.nowDevice[name][2] = '00ff':$scope.nowDevice[name][2] = '0000';
-      });
-    }
-  })
-  /**
-   * 主卧Controller
-   */
-  .controller('room3Ctrl', function ($scope, $state,model302,Switch) {
-    $scope.moduleChange(1, 3);
-    $scope.nowDevice = model302.masterRoom;
-    $scope.changeStatus = function(name){
-      Switch.$set(model302.room_id,$scope.nowDevice[name]).then(function(data){
-        $scope.nowDevice[name][2] == '0000' ? $scope.nowDevice[name][2] = '00ff':$scope.nowDevice[name][2] = '0000';
-      });
-    }
-  })
-
-  /**
-   * 厨房Controller
-   */
-  .controller('room4Ctrl', function ($scope, $state,model302,Switch) {
-    $scope.moduleChange(1, 4);
-    $scope.nowDevice = model302.kitchenRoom;
-    $scope.changeStatus = function(name){
-      Switch.$set(model302.room_id,$scope.nowDevice[name]).then(function(data){
-        $scope.nowDevice[name][2] == '0000' ? $scope.nowDevice[name][2] = '00ff':$scope.nowDevice[name][2] = '0000';
-      });
-    }
-  })
-  /**
-   * 餐厅Controller
-   */
-  .controller('room5Ctrl', function ($scope, $state,model302,Switch) {
-    $scope.moduleChange(1, 5);
-    $scope.nowDevice = model302.diningRoom;
-    console.log($scope.nowDevice);
-    $scope.changeStatus = function(name){
-      Switch.$set(model302.room_id,$scope.nowDevice[name]).then(function(data){
-        $scope.nowDevice[name][2] == '0000' ? $scope.nowDevice[name][2] = '00ff':$scope.nowDevice[name][2] = '0000';
-      });
-    }
-
-  })
-  /**
-   * 客厅Controller
-   */
-  .controller('room6Ctrl', function ($scope, $state,model302,Switch) {
-    $scope.moduleChange(1, 6);
-    $scope.nowDevice = model302.livingRoom;
-    $scope.changeStatus = function(name){
-      Switch.$set(model302.room_id,$scope.nowDevice[name]).then(function(data){
-        $scope.nowDevice[name][2] == '0000' ? $scope.nowDevice[name][2] = '00ff':$scope.nowDevice[name][2] = '0000';
-      });
-    }
-  })
 
   .controller('societyCtrl', function ($scope, $state) {
     $scope.moduleChange(2, 0);
@@ -222,12 +152,14 @@ angular.module('app.controllers', [])
 }).controller('neighborCtrl', function ($scope, $state,$ionicScrollDelegate) {
   $scope.headStatus(false);
   $scope.moduleChange(4, 0);
+  $scope.inputVal = '123';
   $scope.datas = [
   {'who':'l','data':'你在哪里？','imgSrc':'/img/home/test.png'},
   {'who':'r','data':'我在珠海周末要不要聚一聚？','imgSrc':'/img/home/test1.png'},
   ];
   var gg= document.getElementById('sendInfo');
   $scope.send = function(){
+    console.log($scope.inputVal);
     var val = gg.innerHTML;
     $scope.datas.push({'who':'r','data':val,'imgSrc':'/img/home/test1.png'});
     $ionicScrollDelegate.scrollBottom();
