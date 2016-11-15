@@ -34,26 +34,27 @@
         <div  ng-click="iconChange(5)"><div class="content"></div></div>
         <!--ng-class="{true:'on',false:''}[icon_on==5]"-->
       </div>
-      <div class="top-music">
+      <div class="top-music" ng-controller="MusicPlayer">
         <!-- <img src="../img/home/music.png" alt="">
         <div class="content">
           <img src="/img/home/musicClinet.png" alt=""><div class="musicList">
             <img src="/img/home/musicList.png" alt="">
           </div>
         </div> -->
+        <audio id="media"src="/res/music/海楠 - 爱啦啦.mp3"controls ng-model="val"></audio> 
         <div class="t">
           <div class="mControl">
             <p class="musicTitle">123</p>
             <div>
               <span class="f_l">0:00</span>
               <div class="range">
-                <input type="range" name="volume" ng-model="data.volume" class="ng-pristine ng-valid">
+                <input type="range" name="volume" ng-model="val" class="ng-pristine ng-valid">
               </div>
               <span class="f_r">0:00</span>
             </div>
             <div class="playControl">
               <span class="prev"></span>
-              <span class="play"></span>
+              <span ng-click="play()" class="play"></span>
               <span class="next"></span>
             </div>
           </div>
@@ -131,4 +132,3 @@
       </div>
   </div>
 
-  <audio id="media"src="http://yinyueshiting.baidu.com/data2/music/37866016/28372716920032.m4a?xcode=846d39482733bf200d9b8f0c677c76d2"controls></audio> 

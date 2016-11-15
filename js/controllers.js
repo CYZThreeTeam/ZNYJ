@@ -92,6 +92,19 @@ angular.module('app.controllers', [])
     };
 
   })
+//音乐播放器
+.controller('MusicPlayer',function($scope){
+  var media = document.getElementById('media');
+  $scope.val = 50;
+  $scope.play = function(){
+    if(media.paused  == true){
+      media.play();
+    }else{
+      media.pause();
+    }
+    
+  }
+})
 //天气
   .controller('weatherInfo',function($scope,weather){
     weather.$get().then(function(data){
