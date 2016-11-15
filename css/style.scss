@@ -553,6 +553,64 @@ body {
 }
 .top-music {
   position: relative;
+  .t{
+    height:50px;
+    width:150px;
+  }
+  .range{
+    position: absolute;top:-3px;
+    transform: scale(.4);
+    -webkit-transform: scale(.4);
+    display: block !important;
+    input{
+      width:210%;
+      position: relative;
+      left: -62%;
+      top:-6px;
+    }
+  }
+  .mControl{
+    
+    width: 100%;
+    color: #fff;
+    font-size: 10px;
+    .musicTitle{
+      margin-bottom: 0;
+      top: 0;
+      line-height: 1.5;
+      width: 100%;
+      left: 0;font-size: 12px;
+      text-align: center;color: #333;
+    }
+    &>div{
+      height: 12px;
+      span{line-height: 1;}
+    }
+    .playControl{
+      text-align: center;height:20px;
+      width:100%;line-height: 20px;
+      span{
+        margin:0 10px;vertical-align:middle;
+        background:url(/img/home/play.png) no-repeat;
+        width: 20px;
+        height: 13.5px;
+        background-size: auto 13.5px;
+        display: inline-block;
+        &:hover{
+          background-image:url(/img/home/play1.png);
+        }
+      }
+      .prev{
+        background-position: 0px 0;
+      }
+      .play{
+        background-position: -46px 0;
+      }
+      .next{
+        background-position: -92px 0;
+      }
+    }
+  }
   .content{
       visibility: hidden;opacity: 0;transition:all .5s ease;-webkit-transition:all .5s ease;
       position: absolute;left: 50%;transform: translate(-50%,20px);-webkit-transform: translate(-50%,20px);top:52px;

@@ -14,6 +14,7 @@ angular.module('app.controllers', [])
     }
   })
   .controller('mainCtrl', function ($scope, $state, $http, $q, $ionicViewSwitcher,model302,$ionicConfig) {
+    $scope.nowDate = new Date();
     $scope.name = '管理员';
     $scope.animate = $ionicConfig.views.transition;
     $scope.shade = false;
