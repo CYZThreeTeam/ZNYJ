@@ -107,18 +107,63 @@ angular.module('app.services', [])
 
     }).success(function (data) {
       if (data.code == 200) {
-        deferred.resolve(data);
+        deferred.resolve(data.result);
       }
       else {
-        deferred.reject(data.message);
+        deferred.reject(data.result);
       }
     }).error(function (data) {
-      deferred.reject(data.message);
+      deferred.reject(data);
     });
     return deferred.promise;
 
   }
  
   return service;
-
 })
+.factory('weather',function($http,$q){
+  var service = {};
+  service.$get = function () {
+    var deferred = $q.defer();
+    $http({
+      url:'http://api.jirengu.com/weather.php',
+      method: "POST",
+      data: {
+        callback:'getWeather'
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      transformRequest: function (obj) {
+        var str = [];
+        for (var p in obj) {
+          str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+        }
+        return str.join("&");
+      }
+
+    }).success(function (data) {
+        deferred.resolve(data);
+    }).error(function (data) {
+      deferred.reject(data);
+    });
+    return deferred.promise;
+
+  }
+  return service;
+})
+.filter('fWeather',function(){
+  return function(val){
+    val = val || '';
+    var output = '';
+    output = val.replace(/ ~ /g,'/').replace(/℃/g,'').replace(/(.*)\/(.*)/g,'$2°'+'/$1°');
+    return output;
+  }
+}).filter('fNowWeather',function(){
+  return function(val){
+    val = val || '';
+    var output = '';
+    output = val.replace(/.*：(.*)℃.*/g,'$1°');
+    return output;
+  }
+});

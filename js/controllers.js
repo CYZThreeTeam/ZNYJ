@@ -91,6 +91,13 @@ angular.module('app.controllers', [])
     };
 
   })
+//天气
+  .controller('weatherInfo',function($scope,weather){
+    weather.$get().then(function(data){
+      $scope.weatherData = data.results[0].weather_data
+;
+    });
+  })
 // 家 控制器
   .controller('homeCtrl', function ($scope, $state,model302,Switch) {
     $scope.headShow = true;
@@ -125,7 +132,6 @@ angular.module('app.controllers', [])
       $state.go('main.home', {reload: true});
     }
   })
-
   .controller('societyCtrl', function ($scope, $state) {
     $scope.moduleChange(2, 0);
     $scope.showMonitoring = function(index){

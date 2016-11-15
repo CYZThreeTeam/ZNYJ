@@ -585,6 +585,36 @@ body {
 
 .top-weather {
   margin-left: 20px;
+  color:#fff;font-size: 10px;
+  li{
+    display: inline-block;width:50px;text-align: center;
+    border-right:1px solid #8d8e8e;line-height: 1;
+    .img{
+      background:url(/img/home/weather1.png) no-repeat;
+      width:18px;height:18px;margin:2px auto;
+      background-size:104px 16px;line-height: 1.5;font-size: 12px;
+      background-position:2px 0px;
+    }
+    &.nowWeather{
+      width:65px;
+      h2,p{
+        text-align: left;color:#fff;font-weight: normal;
+      }
+      h2{
+        line-height: 1;margin-bottom: 5px;
+        background: url(/img/home/weather1.png) no-repeat;
+        background-size: 104px 16px;
+        background-position: 44px 8px;
+      }
+    }
+    &:last-child,&:first-child{
+      border-right-color:transparent;
+    }
+
+    p{
+      margin:0;
+    }
+  }
 }
 
 .top-icon {
