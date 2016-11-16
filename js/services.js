@@ -171,7 +171,7 @@ angular.module('app.services', [])
     val = val || 0;
     var output = '';
     var h = (val/60).toFixed(0);
-    var s = (val.toFixed(0))%60;
+    var s = (Number(val).toFixed(0))%60;
     output = h+':'+s;
     return output;
   }
