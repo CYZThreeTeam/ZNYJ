@@ -94,15 +94,21 @@ angular.module('app.controllers', [])
   })
 //音乐播放器
 .controller('MusicPlayer',function($scope){
-  var media = document.getElementById('media');
-  $scope.val = 50;
-  $scope.play = function(){
+  $scope.audio = document.getElementById('media');
+  $scope.val = 0;
+  media.addEventListener('timeupdate',function(){
+      $scope.val = $scope.audio.currentTime;
+      $scope.$digest();
+  });
+  $scope.progressChange = function(){
+    $scope.audio.currentTime = $scope.val;
+  }
+  $scope.play = function(obj){
     if(media.paused  == true){
       media.play();
     }else{
       media.pause();
     }
-    
   }
 })
 //天气

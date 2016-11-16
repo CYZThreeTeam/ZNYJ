@@ -563,7 +563,7 @@ body {
     -webkit-transform: scale(.4);
     display: block !important;
     input{
-      width:210%;
+      width:210%;margin-left: 6px;
       position: relative;
       left: -62%;
       top:-6px;
@@ -596,7 +596,7 @@ body {
         height: 13.5px;
         background-size: auto 13.5px;
         display: inline-block;
-        &:hover{
+        &:active{
           background-image:url(/img/home/play1.png);
         }
       }
@@ -1460,10 +1460,10 @@ body {
     top: 18%;left: 60%;
   }
   li:nth-child(5){
-    top: 30%;left: 17%;
+    top: 30%;left: 27%;
   }
   li:nth-child(6){
-    top: 45%;left: 17%;
+    top: 45%;left: 27%;
   }
   li:nth-child(7){
     top: 70%;left: 47%;

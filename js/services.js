@@ -166,4 +166,13 @@ angular.module('app.services', [])
     output = val.replace(/.*：(.*)℃.*/g,'$1°');
     return output;
   }
+}).filter('time',function(){
+  return function(val){
+    val = val || 0;
+    var output = '';
+    var h = (val/60).toFixed(0);
+    var s = (val.toFixed(0))%60;
+    output = h+':'+s;
+    return output;
+  }
 });

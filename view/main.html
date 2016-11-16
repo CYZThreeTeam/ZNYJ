@@ -41,20 +41,20 @@
             <img src="/img/home/musicList.png" alt="">
           </div>
         </div> -->
-        <audio id="media"src="/res/music/海楠 - 爱啦啦.mp3"controls ng-model="val"></audio> 
+        <audio id="media"src="/res/music/海楠 - 爱啦啦.mp3"controls ></audio> 
         <div class="t">
           <div class="mControl">
-            <p class="musicTitle">123</p>
+            <p class="musicTitle">海楠 - 爱啦啦</p>
             <div>
-              <span class="f_l">0:00</span>
+              <span class="f_l">{{val|time}}</span>
               <div class="range">
-                <input type="range" name="volume" ng-model="val" class="ng-pristine ng-valid">
+                <input type="range" ng-change="progressChange()" id="range1" name="volume" ng-model="val" max="{{audio.duration}}" class="ng-pristine ng-valid">
               </div>
-              <span class="f_r">0:00</span>
+              <span class="f_r">{{audio.duration | time}}</span>
             </div>
             <div class="playControl">
               <span class="prev"></span>
-              <span ng-click="play()" class="play"></span>
+              <span ng-click="play(this)" class="play"></span>
               <span class="next"></span>
             </div>
           </div>
@@ -116,7 +116,7 @@
 
       </div>
     </div>
-    <div class="welcome-bg">
+<!--     <div class="welcome-bg">
 
     </div>
       <div class="welcome">
@@ -130,5 +130,5 @@
           <span>来自：物业管理处</span>
         </div>
       </div>
-  </div>
+  </div> -->
 
