@@ -19,16 +19,16 @@
       <div class="top-date">
         <span ng-bind="nowDate | date:'yyyy年MM月dd日'"></span>
         <div class="content">
-          <img src="/img/home/calendar.png" alt="">
+          <img src="./img/home/calendar.png" alt="">
           <div class="activity">
-            <img src="/img/home/calendar1.png" alt="">
-            <div class="slide"><img class="l" src="/img/home/calendarL.png" alt=""> <img class="r" src="/img/home/calendarR.png"> </div>
+            <img src="./img/home/calendar1.png" alt="">
+            <div class="slide"><img class="l" src="./img/home/calendarL.png" alt=""> <img class="r" src="./img/home/calendarR.png"> </div>
           </div>
         </div>
       </div>
       <div class="top-icon">
-        <div  ng-click="iconChange(1)" class="message"><i>2</i><div class="content"><img src="/img/home/infoCard.png" alt=""><div class="more"><div class="ac"></div><img src="/img/home/infoDetails.png" alt=""></div></div></div>
-        <div  ng-click="iconChange(2)" class="video"><div class="content"><img src="/img/home/video.png" alt=""><div class="addressBook"><img src="/img/home/video1.png" alt=""></div></div></div>
+        <div  ng-click="iconChange(1)" class="message"><i>2</i><div class="content"><img src="./img/home/infoCard.png" alt=""><div class="more"><div class="ac"></div><img src="./img/home/infoDetails.png" alt=""></div></div></div>
+        <div  ng-click="iconChange(2)" class="video"><div class="content"><img src="./img/home/video.png" alt=""><div class="addressBook"><img src="./img/home/video1.png" alt=""></div></div></div>
         <div  ng-click="iconChange(3)"><div class="content"></div></div>
         <div  ng-click="iconChange(4)"><div class="content"></div></div>
         <div  ng-click="iconChange(5)"><div class="content"></div></div>
@@ -37,11 +37,11 @@
       <div class="top-music" ng-controller="MusicPlayer">
         <!-- <img src="../img/home/music.png" alt="">
         <div class="content">
-          <img src="/img/home/musicClinet.png" alt=""><div class="musicList">
-            <img src="/img/home/musicList.png" alt="">
+          <img src="./img/home/musicClinet.png" alt=""><div class="musicList">
+            <img src="./img/home/musicList.png" alt="">
           </div>
         </div> -->
-        <audio id="media"src="/res/music/海楠 - 爱啦啦.mp3"controls ></audio> 
+        <audio id="media"src="./res/music/海楠 - 爱啦啦.mp3"controls ></audio>
         <div class="t">
           <div class="mControl">
             <p class="musicTitle">海楠 - 爱啦啦</p>
@@ -58,7 +58,7 @@
               <span class="next"></span>
             </div>
           </div>
-          
+
         </div>
       </div>
       <div class="top-weather" ng-controller="weatherInfo">
@@ -74,48 +74,129 @@
             <p>{{val.temperature | fWeather}}</p>
           </li>
         </ul>
+        <div class="weatherInfo">
+          <div class="city">
+            <h5>珠海</h5>
+            <span>多云</span>
+            <h4>28<span>℃</span></h4>
+          </div>
+          <div class="weatherBg">
+            <div class="todayInfo">
+              <p class="clearfix">
+                <span class="f_l">周四 11/17</span>
+                <span class="f_r">34&nbsp;-&nbsp;27</span>
+              </p>
+              <ul class="clearfix">
+                <li>
+                  <span class="time">11am</span>
+                  <i></i>
+                  <span>30</span>
+                </li>
+                <li>
+                  <span class="time">11am</span>
+                  <i></i>
+                  <span>30</span>
+                </li>
+                <li>
+                  <span class="time">11am</span>
+                  <i></i>
+                  <span>30</span>
+                </li>
+                <li>
+                  <span class="time">11am</span>
+                  <i></i>
+                  <span>30</span>
+                </li>
+              </ul>
+            </div>
+            <div class="todayDetails clearfix">
+              <div class="f_l">
+                <label>详细资料</label>
+              </div>
+              <ul>
+                <li class="humidity">63%</li>
+                <li class="ultraviolet">中4</li>
+                <li class="windDirection"><span>东北</span>3公尺/秒</li>
+                <li class="PM">53良</li>
+              </ul>
+            </div>
+            <div class="last7">
+              <ul>
+                <li class="sunny">
+                  <label>星期五</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期六</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期日</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期一</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期而</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期三</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+                <li class="sunny">
+                  <label>星期四</label>
+                  <i class="weather"></i>
+                  <span class="temperature">27°<em>23°</em></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!--内容栏-->
     <ion-nav-view animation="slide-in-up" name="main" class="home-content"></ion-nav-view>
+  </div>
+  <!--底部浮动切换栏-->
+  <div class="main-footer" ng-class="{true:'footerShow',false:''}[footerShow==true]">
+        <div class="home-footer" ng-click="footerStatus(true,$event)">
+          <ul class="footer-circle">
+            <li ng-class="{true:'home-footer-active',false:''}[nowModule==1]" ng-click="moduleChange(1,0);headStatus(true)"><div class="l"></div><div class="r"></div></li>
+            <li ng-class="{true:'home-footer-active',false:''}[nowModule==2]" ng-click="moduleChange(2,0);headStatus(true)"><div class="l"></div><div class="r"></div></li>
+            <li ng-class="{true:'home-footer-active',false:''}[nowModule==3]" ng-click="moduleChange(3,0);headStatus(true)"><div class="l"></div><div class="r"></div></li>
+            <li ng-class="{true:'home-footer-active',false:''}[nowModule==4]" ng-click="moduleChange(4,0);headStatus(false)"><div class="l"></div><div class="r"></div></li>
+          </ul>
+          <ul>
+            <li>家</li>
+            <li>社</li>
+            <li>生</li>
+            <li>邻</li>
+          </ul>
+          <div class="footerCircle"><div class="l"></div><div class="r" ng-class="{true:'',false:'hide'}[footerShow==false]"></div></div>
+        </div>
 
-    <!--Home页面子路由-->
-    <!--<ion-nav-view animation="slide-left-right-ios7" name="home" class="home-content"></ion-nav-view>-->
+        <div class="footernav" ng-class="{true:'footerShow',false:''}[footerShow==false&&nowModule==1]">
+          <a class="goHome" href="javascript:void(0);"></a>
+          <a class="leaveHome" href="javascript:void(0);"></a>
+          <a class="elevator" href="javascript:void(0);"></a>
+          <a class="unlock" href="javascript:void(0);"></a>
+          <a class="monitoring" href="javascript:void(0);"></a>
+          <a class="safe" href="javascript:void(0);"></a>
+        </div>
+        <div class="shade" ng-click="footerStatus(false,$event)">
 
-    <!--底部浮动切换栏-->
-    
-</div>
-
-<div class="main-footer" ng-class="{true:'footerShow',false:''}[footerShow==true]">
-      <div class="home-footer" ng-click="footerStatus(true,$event)">
-        <ul class="footer-circle">
-          <li ng-class="{true:'home-footer-active',false:''}[nowModule==1]" ng-click="moduleChange(1,0);headStatus(true)"><div class="l"></div><div class="r"></div></li>
-          <li ng-class="{true:'home-footer-active',false:''}[nowModule==2]" ng-click="moduleChange(2,0);headStatus(true)"><div class="l"></div><div class="r"></div></li>
-          <li ng-class="{true:'home-footer-active',false:''}[nowModule==3]" ng-click="moduleChange(3,0);headStatus(true)"><div class="l"></div><div class="r"></div></li>
-          <li ng-class="{true:'home-footer-active',false:''}[nowModule==4]" ng-click="moduleChange(4,0);headStatus(false)"><div class="l"></div><div class="r"></div></li>
-        </ul>
-        <ul>
-          <li>家</li>
-          <li>社</li>
-          <li>生</li>
-          <li>邻</li>
-        </ul>
-        <div class="footerCircle"><div class="l"></div><div class="r" ng-class="{true:'',false:'hide'}[footerShow==false]"></div></div>
-      </div>
-
-      <div class="footernav" ng-class="{true:'footerShow',false:''}[footerShow==false&&nowModule==1]">
-        <a class="goHome" href="javascript:void(0);"></a>
-        <a class="leaveHome" href="javascript:void(0);"></a>
-        <a class="elevator" href="javascript:void(0);"></a>
-        <a class="unlock" href="javascript:void(0);"></a>
-        <a class="monitoring" href="javascript:void(0);"></a>
-        <a class="safe" href="javascript:void(0);"></a>
-      </div>
-      <div class="shade" ng-click="footerStatus(false,$event)">
-
-      </div>
-    </div>
+        </div>
+  </div>
 <!--     <div class="welcome-bg">
 
     </div>
@@ -131,4 +212,3 @@
         </div>
       </div>
   </div> -->
-
