@@ -28,8 +28,23 @@ angular.module('app.controllers', [])
     $scope.headStatus = function (status) {
       $scope.headShow = status;
     };
-    
-    
+
+    //滑动路由切换
+    $scope.gg = function(type){
+      console.log(type);
+      //向右滑动
+      if( type ){
+        $scope.nowModule > 1 ? $scope.nowModule-- : $scope.nowModule= 1;
+      }else{
+        $scope.nowModule < 4 ? $scope.nowModule++ : $scope.nowModule= 4;
+      }
+      $scope.moduleChange($scope.nowModule,0);
+      if( $scope.nowModule != 4 ){
+        $scope.headStatus(true);
+      }else{
+        $scope.headStatus(false);
+      }
+    }
     //路由切换
     $scope.moduleChange = function (module_id, room_id) {
       if(module_id == 1 && (room_id != 0 && room_id != undefined) ){
@@ -79,7 +94,6 @@ angular.module('app.controllers', [])
           $state.go('login', {reload: true});
           break;
       }
-
       $scope.nowModule = module_id;
     };
     $scope.icon_on = 0;

@@ -12,7 +12,7 @@
 
 
   <!--右边内容栏-->
-  <div class="home-right-panel" ng-class="{true:'',false:'headHide'}[headShow==true]">
+  <div class="home-right-panel" on-swipe-right="gg(true)" on-swipe-left="gg(false)" ng-class="{true:'',false:'headHide'}[headShow==true]">
     <!--头部信息栏-->
     <div class="home-header">
       <div class="top-logo"></div>
@@ -61,9 +61,9 @@
 
         </div>
       </div>
-      <div class="top-weather" ng-controller="weatherInfo">
+      <div class="top-weather" ng-controller="weatherInfo" >
         <!-- <img src="../img/home/weather.png" alt=""> -->
-        <ul>
+        <ul on-tap="active=true">
           <li class="nowWeather">
             <h2>{{weatherData[0].date| fNowWeather}}</h2>
             <p>{{weatherData[0].wind}}，{{weatherData[0].weather}}</p>
@@ -74,7 +74,7 @@
             <p>{{val.temperature | fWeather}}</p>
           </li>
         </ul>
-        <div class="weatherInfo">
+        <div class="weatherInfo" ng-class="{true:'active',false:''}[active==true]" on-swipe-right="active = false;">
           <div class="city">
             <h5>珠海</h5>
             <span>多云</span>
