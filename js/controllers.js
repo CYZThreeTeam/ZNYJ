@@ -54,44 +54,44 @@ angular.module('app.controllers', [])
       }
       switch (module_id) {
         case 0:
-          $state.go('login', {reload: true});
+          $state.go('login');
           break;
         case 1:
           switch (room_id) {
             case 1:
-              $state.go('main.room1', {reload: true});
+              $state.go('main.room1');
               break;
             case 2:
-              $state.go('main.room2', {reload: true});
+              $state.go('main.room2');
               break;
             case 3:
-              $state.go('main.room3', {reload: true});
+              $state.go('main.room3');
               break;
             case 4:
-              $state.go('main.room4', {reload: true});
+              $state.go('main.room4');
               break;
             case 5:
-              $state.go('main.room5', {reload: true});
+              $state.go('main.room5');
               break;
             case 6:
-              $state.go('main.room6', {reload: true});
+              $state.go('main.room6');
               break;
             default:
-              $state.go('main.home', {reload: true});
+              $state.go('main.home');
               break;
           }
           break;
         case 2:
-          $state.go('main.society', {reload: true});
+          $state.go('main.society');
           break;
         case 3:
-          $state.go('main.life', {reload: true});
+          $state.go('main.life');
           break;
         case 4:
-          $state.go('main.neighbor', {reload: true});
+          $state.go('main.neighbor');
           break;
         default:
-          $state.go('login', {reload: true});
+          $state.go('login');
           break;
       }
       $scope.nowModule = module_id;
@@ -163,7 +163,7 @@ angular.module('app.controllers', [])
     $scope.backHome = function(){
       $scope.nowDevice = [];
       $scope.showChild = '';
-      $state.go('main.home', {reload: true});
+      $state.go('main.home');
     }
   })
   .controller('societyCtrl', function ($scope, $state) {
