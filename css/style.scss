@@ -356,6 +356,8 @@ body {
   background-size: 100% 100%;
   -webkit-filter: blur(5px);
   display: -webkit-flex;
+
+
   position: absolute;
   /*left:0;*/
   top: 0;
@@ -760,6 +762,8 @@ body {
 
 .society-group {
   display: -webkit-flex;
+
+
   width: 100%;
   height: 100%;
   background: url(../img/home/bg.png) no-repeat;
@@ -848,7 +852,7 @@ body {
 }
 
 .life-group {
-  /*display: -webkit-box;
+  /*
   -webkit-box-align: center;
   -webkit-box-pack: center;
   -webkit-box-orient: vertical;*/
@@ -889,7 +893,10 @@ body {
 }
 
 .neighbor-group {
-  display: -webkit-flex;flex-direction: column;
+  display: -webkit-flex;
+
+   
+  -webkit-flex-direction: column;
   width: 100%;
   height: 100%;
   background: url(../img/home/bg.png) no-repeat;
@@ -936,7 +943,10 @@ body {
       }
     }
   .chat-group {
-    width: 100%;display:-webkit-flex;
+    width: 100%;
+    display:-webkit-flex;
+
+
     // padding-bottom:123px;
     height: 100%;
     // background: url(../img/neighbor/content_bg1.jpg) no-repeat;
@@ -1006,7 +1016,11 @@ body {
 
     }
     .chat_content {
-      flex-grow: 5;display:-webkit-flex;flex-direction: column;
+      -webkit-flex-grow: 5;
+      display:-webkit-flex;
+
+
+      -webkit-flex-direction: column;
       .chat_info1{
         height:183px;
         background:url(../img/home/lin_t2.png) no-repeat left top;
@@ -1047,7 +1061,7 @@ body {
         }
       }
       .chat_info2{
-        flex-grow: 5;position: relative;
+        -webkit-flex-grow: 5;position: relative;
         background:url(../img/home/lin_t3.png) no-repeat left top;
         background-size:100% 100%;
         .chatContet{
@@ -1582,7 +1596,9 @@ body {
 .weatherInfo{
   *{margin:0;line-height: 1;color: rgba(255,255,255,.6);}
   position: fixed;display:-webkit-flex;
-  flex-direction: column;
+
+
+  -webkit-flex-direction: column;
   right:0px;top:72px;
   transform: translateX(100%);
   transition: all .5s ease;
@@ -1600,8 +1616,10 @@ body {
     background:url(../img/zhuhai_03.png) no-repeat;
     background-size:100% 100%;text-align: center;
     color:#fff;
-    display:-webkit-flex;flex-direction: column;
-    justify-content: center;
+    display:-webkit-flex;-webkit-flex-direction: column;
+
+
+    -webkit-justify-content: center;
     h5{
       letter-spacing: 2px;
       font-size: 16px;
@@ -1620,7 +1638,7 @@ body {
   .weatherBg{
     background: url(../img/weatherSilde.png) no-repeat;
     background-size:100% 100%;
-    flex-grow: 9;padding:0 5px;
+    -webkit-flex-grow: 9;padding:0 5px;
   }
   .todayInfo{
     border-bottom:1px solid rgba(255,255,255,.2);
