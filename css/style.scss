@@ -977,6 +977,7 @@ body {
               width: 14px;
               height: 14px;
               transform: translateY(-50%) rotate(45deg);
+              -webkit-transform: translateY(-50%) rotate(45deg);
               top: 50%;
               z-index: 2;
               background-color: #01d6c4;
@@ -1085,6 +1086,7 @@ body {
         .input{
               position: absolute;bottom: 0;left: 0;display: -webkit-flex;bottom: 6%;min-height: 40px;
               left: 50%;transform: translateX(-50%);
+              -webkit-transform: translateX(-50%);
               .dib{
                     width: 470px;
                     background: #fff;
@@ -1289,6 +1291,7 @@ body {
   text-align: center;
   left: 50%;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   .room-header-lab {
     color: #FFF;
     font-family: '微软雅黑';
